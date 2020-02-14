@@ -1,0 +1,7 @@
+---
+sources:
+    - aws_linked_ocp:
+        type: AWS
+        bucket: nisepopulator
+        report_prefix: cur
+        report_name: awscost
