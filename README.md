@@ -45,12 +45,18 @@ The `nise-populator` runs as a *CronJob* on OpenShift creating data daily. You c
 ```
 oc login
 ```
-
 2. Select your project
 ```
 oc project koku
 ```
-3. Create OpenShift resources
+3. Copy `openshift/example.parameters.properties` into a `openshift/parameters.properties`
+4. Update the values within `openshift/parameters.properties`
+5. Create OpenShift resources
 ```
-oc create -f openshift/ | oc apply
+oc process --param-file openshift/arameters.properties  -f openshift/ |  oc create -f -
+```
+
+_Note:_ Delete OpenShift resources with the following command:
+```
+oc process --param-file openshift/arameters.properties  -f openshift/ |  oc delete -f -
 ```
