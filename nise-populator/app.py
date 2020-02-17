@@ -1,11 +1,24 @@
 import logging
 import os
+import sys
 
 import yaml
 
 from sources.source_factory import SourceFactory
 from utils import get_static_file_path
 from utils import load_yaml_file
+
+
+root = logging.getLogger()
+root.setLevel(logging.INFO)
+
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.INFO)
+formatter = logging.Formatter(
+    "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+handler.setFormatter(formatter)
+root.addHandler(handler)
 
 LOG = logging.getLogger(__name__)
 

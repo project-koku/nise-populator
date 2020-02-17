@@ -1,7 +1,5 @@
 import logging
 import os
-from datetime import datetime
-from datetime import timedelta
 
 import boto3
 from botocore.exceptions import ClientError
@@ -25,15 +23,15 @@ class AWS(Source):
         self.access_key = os.environ.get("AWS_ACCESS_KEY_ID")
         self.secret = os.environ.get("AWS_SECRET_ACCESS_KEY")
         self.s3_bucket = kwargs.get(self.BUCKET)
-        self.s3_report_prefix = kwargs.get(self.REPORT_PREFIX, "cur")
-        self.s3_report_name = kwargs.get(self.REPORT_NAME, "cur")
+        self.report_prefix = kwargs.get(self.REPORT_PREFIX, "cur")
+        self.report_name = kwargs.get(self.REPORT_NAME, "cur")
         self.static_file = kwargs.get(self.STATIC_FILE)
         self.credentials = {
             "aws_access_key_id": self.access_key,
             "aws_secret_access_key": self.secret,
         }
         self.s3_client = boto3.client("s3", **self.credentials)
-        super().__init__()
+        super().__init__(**kwargs)
 
     @staticmethod
     def get_source_type():
@@ -52,7 +50,7 @@ class AWS(Source):
         """Return a list of objects in bucket with the given prefix."""
         objects = None
         response = self.s3_client.list_objects(
-            Bucket=self.s3_bucket, Prefix=self.s3_report_prefix
+            Bucket=self.s3_bucket, Prefix=self.report_prefix
         )
         if response.get("Contents"):
             objects = [
@@ -79,13 +77,15 @@ class AWS(Source):
     def generate(self):
         """Create data and upload it to the necessary location."""
         options = {
-            "start_date": datetime.today().replace(day=1),
-            "end_date": datetime.today() + timedelta(days=1),
+            "start_date": self.start_date,
+            "end_date": self.end_date,
             "aws_bucket_name": self.s3_bucket,
-            "aws_prefix_name": self.s3_report_prefix,
-            "aws_report_name": self.s3_report_name,
+            "aws_prefix_name": self.report_prefix,
+            "aws_report_name": self.report_name,
         }
         if self.static_file:
-            static_file_data = Source.obtain_static_file_data(self.static_file)
+            static_file_data = Source.obtain_static_file_data(
+                self.static_file, self.start_date, self.end_date
+            )
             options["static_report_data"] = static_file_data
         aws_create_report(options)

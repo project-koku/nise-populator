@@ -8,6 +8,7 @@ pre-commit = "*"
 "boto3" = "*"
 koku-nise = "*"
 pyyaml = "*"
+azure-storage-blob = "*"
 
 [dev-packages]
 

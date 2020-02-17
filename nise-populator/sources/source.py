@@ -2,6 +2,8 @@
 import os
 from abc import ABC
 from abc import abstractmethod
+from datetime import datetime
+from datetime import timedelta
 
 import yaml
 
@@ -17,7 +19,8 @@ class Source(ABC):
     @abstractmethod
     def __init__(self, **kwargs):
         """Initialize the source with configuration data."""
-        pass
+        self.start_date = datetime.today().replace(day=1)
+        self.end_date = datetime.today() + timedelta(days=1)
 
     @staticmethod
     @abstractmethod
@@ -49,7 +52,7 @@ class Source(ABC):
             static_file_data = yaml.load(env_static_file)
         else:
             file_path = get_static_file_path(static_file)
-            if os.path(file_path).exists() and os.path(file_path).file():
+            if os.path.exists(file_path) and os.path.isfile(file_path):
                 static_file_data = load_yaml_file(file_path)
 
         if static_file_data:

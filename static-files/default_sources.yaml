@@ -5,3 +5,19 @@ sources:
         bucket: nisepopulator
         report_prefix: cur
         report_name: awscost
+        static-file: aws_static_data.yaml
+    - ocp_linked_aws:
+        type: OCP
+        cluster_id: 8a3e59b7-23a8-4ed1-b1cf-afd5afea54b9
+        static-file: ocp_on_aws_static_data.yaml
+    - azure_linked_ocp:
+        type: Azure
+        storage_account: nisepopulator
+        storage_container: cur
+        report_prefix: cur
+        report_name: azurecost
+        static-file: azure_static_data.yaml
+    - ocp_linked_azure:
+        type: OCP
+        cluster_id: eb93b259-1369-4f90-88ce-e68c6ba879a9
+        static-file: ocp_on_azure_static_data.yaml

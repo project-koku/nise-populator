@@ -1,5 +1,11 @@
 """A factory to create sources from a configuration."""
+import logging
+
 from sources.aws import AWS
+from sources.azure import Azure
+from sources.ocp import OCP
+
+LOG = logging.getLogger(__name__)
 
 
 class SourceFactory:
@@ -8,7 +14,7 @@ class SourceFactory:
     def __init__(self, source_config):
         """Initialize the factory with source configuration."""
         self.source_config = source_config
-        self.valid_sources = [AWS]
+        self.valid_sources = [AWS, Azure, OCP]
         self.valid_source_map = {}
         for valid_source in self.valid_sources:
             self.valid_source_map[
@@ -37,6 +43,9 @@ class SourceFactory:
     def process(self):
         """Process all initialized sources."""
         for source in self.sources:
-            if source.check_configuration():
-                source.setup()
-                source.generate()
+            try:
+                if source.check_configuration():
+                    source.setup()
+                    source.generate()
+            except Exception:
+                LOG.exception("Data generation error occcurred.")
