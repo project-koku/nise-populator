@@ -53,10 +53,10 @@ oc project koku
 4. Update the values within `openshift/parameters.properties`
 5. Create OpenShift resources
 ```
-oc process --param-file openshift/arameters.properties  -f openshift/ |  oc create -f -
+oc process --param-file openshift/parameters.properties  -f openshift/ |  oc create -f -
 ```
 
 _Note:_ Delete OpenShift resources with the following command:
 ```
-oc process --param-file openshift/arameters.properties  -f openshift/ |  oc delete -f -
+oc process --param-file openshift/parameters.properties  -f openshift/ |  oc delete -f -
 ```
