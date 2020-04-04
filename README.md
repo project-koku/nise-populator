@@ -6,7 +6,7 @@ A python application for deploying populated nise data for cloud providers
 
 To get started developing with nise-populator first clone a local copy of the git repository:
 ```
-git clone https://github.com/chambridge/nise-populator.git
+git clone https://github.com/project-koku/nise-populator.git
 ````
 
 This project is developed uses Pipenv. Many configuration settings can be read in from a ``.env`` file. To configure, do the following:
