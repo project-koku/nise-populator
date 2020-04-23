@@ -21,3 +21,6 @@ sources:
         type: OCP
         cluster_id: eb93b259-1369-4f90-88ce-e68c6ba879a9
         static-file: ocp_on_azure_static_data.yaml
+    - ocp_on_openstack:
+        type: OCP
+        cluster_id: a94ea9bc-9e4f-4b91-89c2-c7099ec08427
