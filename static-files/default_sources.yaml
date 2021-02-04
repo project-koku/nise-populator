@@ -24,3 +24,4 @@ sources:
     - ocp_on_openstack:
         type: OCP
         cluster_id: a94ea9bc-9e4f-4b91-89c2-c7099ec08427
+        static-file: ocp_on_premise.yaml
