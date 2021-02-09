@@ -306,7 +306,7 @@ generators:
             kube-system:
               pods:
                 - pod:
-                  pod_name: pod_name5
+                  pod_name: pod_name13
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1
@@ -315,7 +315,7 @@ generators:
             openshift:
               pods:
                 - pod:
-                  pod_name: pod_name6
+                  pod_name: pod_name14
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1
@@ -329,7 +329,7 @@ generators:
             kube-system:
               pods:
                 - pod:
-                  pod_name: pod_name7
+                  pod_name: pod_name15
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1
@@ -338,7 +338,7 @@ generators:
             openshift:
               pods:
                 - pod:
-                  pod_name: pod_name8
+                  pod_name: pod_name16
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1
@@ -352,7 +352,7 @@ generators:
             kube-system:
               pods:
                 - pod:
-                  pod_name: pod_name9
+                  pod_name: pod_name17
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1
@@ -361,7 +361,7 @@ generators:
             openshift:
               pods:
                 - pod:
-                  pod_name: pod_name10
+                  pod_name: pod_name18
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1
