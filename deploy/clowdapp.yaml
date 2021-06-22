@@ -1,0 +1,135 @@
+---
+apiVersion: v1
+kind: Template
+metadata:
+  name: nise-populator
+objects:
+
+- apiVersion: v1
+  kind: Secret
+  metadata:
+    name: nise-populator-secret
+  data:
+    aws-access-key-id: ''
+    aws-secret-access-key: ''
+    azure-storage-account: ''
+    azure-storage-connection-string: ''
+    insights-url: ''
+    insights-user: ''
+    insights-password: ''
+    insights-account: ''
+    insights-org-id: ''
+  type: Opaque
+
+- apiVersion: cloud.redhat.com/v1alpha1
+  kind: ClowdApp
+  metadata:
+    name: nise-populator
+  spec:
+    envName: ${ENV_NAME}
+    jobs:
+    - name: nise-populator
+      schedule: ${POPULATE_SCHEDULE}
+      restartPolicy: Never
+      concurrencyPolicy: Forbid
+      startingDeadlineSeconds: ${{POPULATE_STARTING_DEADLINE}}
+      podSpec:
+        image: ${IMAGE}:${IMAGE_TAG}
+        command: ["python", "nise-populator/app.py"]
+        env:
+          - name: AWS_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                key: aws-access-key-id
+                name: nise-populator-secret
+                optional: true
+          - name: AWS_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                key: aws-secret-access-key
+                name: nise-populator-secret
+                optional: true
+          - name: AZURE_STORAGE_ACCOUNT
+            valueFrom:
+              secretKeyRef:
+                key: azure-storage-account
+                name: nise-populator-secret
+                optional: true
+          - name: AZURE_STORAGE_CONNECTION_STRING
+            valueFrom:
+              secretKeyRef:
+                key: azure-storage-connection-string
+                name: nise-populator-secret
+                optional: true
+          - name: INSIGHTS_URL
+            valueFrom:
+              secretKeyRef:
+                key: insights-url
+                name: nise-populator-secret
+                optional: true
+          - name: INSIGHTS_USER
+            valueFrom:
+              secretKeyRef:
+                key: insights-user
+                name: nise-populator-secret
+                optional: true
+          - name: INSIGHTS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: insights-password
+                name: nise-populator-secret
+                optional: true
+          - name: INSIGHTS_ACCOUNT_ID
+            valueFrom:
+              secretKeyRef:
+                key: insights-account
+                name: nise-populator-secret
+                optional: true
+          - name: INSIGHTS_ORG_ID
+            valueFrom:
+              secretKeyRef:
+                key: insights-org-id
+                name: nise-populator-secret
+                optional: true
+        resources:
+          requests:
+            cpu: ${CPU_REQUEST}
+            memory: ${MEMORY_REQUEST}
+          limits:
+            cpu: ${CPU_LIMIT}
+            memory: ${MEMORY_LIMIT}
+
+
+
+parameters:
+- description: The name
+  name: NAME
+  value: nise-populator
+- description: Initial amount of CPU
+  name: CPU_REQUEST
+  value: 100m
+- description: Initial amount of memory
+  name: MEMORY_REQUEST
+  value: 256Mi
+- description: Cpu limit of service
+  name: CPU_LIMIT
+  value: 300m
+- description: memory limit of service
+  name: MEMORY_LIMIT
+  value: 512Mi
+- description: Image tag
+  name: IMAGE_TAG
+  required: true
+- description: Image name
+  name: IMAGE
+  value: quay.io/cloudservices/nise-populator
+- description: Determines Clowder deployment
+  name: CLOWDER_ENABLED
+  value: "true"
+- description: ClowdEnv Name
+  name: ENV_NAME
+  requred: false
+- name: POPULATE_SCHEDULE
+  value: '0 15 * * *'
+- name: POPULATE_STARTING_DEADLINE
+  value: '300'
