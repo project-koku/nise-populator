@@ -91,12 +91,6 @@ objects:
                 key: insights-org-id
                 name: nise-populator-secret
                 optional: true
-          - name: IMAGE_NAME
-            value: nise-populator
-          - name: IMAGE_TAG
-            value: ${IMAGE_TAG}
-          - name: IMAGE_NAMESPACE
-            value: ${IMAGE_NAMESPACE}
         resources:
           requests:
             cpu: ${CPU_REQUEST}
