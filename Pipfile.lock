@@ -431,11 +431,11 @@
         },
         "koku-nise": {
             "hashes": [
-                "sha256:8b4915224fd623a4c189166bb5862441cd9a762e8704d341bcdfa6f82d00ae0c",
-                "sha256:92bef0d5e7cdac9ff6ac6740c18eccdc46ff62a00f82f064a7a1c2d5e5ffa6b6"
+                "sha256:17003ed554724163f23a4e71903c07543bc5769e053b60997bf6411325041431",
+                "sha256:71f3af1042161d9484b43d6ac7b88d8d6f94c14c8140b51e640629c66a99e3b3"
             ],
             "index": "pypi",
-            "version": "==2.5.6"
+            "version": "==2.7.2"
         },
         "markupsafe": {
             "hashes": [
