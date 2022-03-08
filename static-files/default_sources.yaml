@@ -25,3 +25,10 @@ sources:
         type: OCP
         cluster_id: a94ea9bc-9e4f-4b91-89c2-c7099ec08427
         static-file: ocp_on_premise.yaml
+    - ocp_linked_gcp:
+        type: OCP
+        cluster_id: c32se93c-73z3-3s3d-cs23-d3245sj45349
+        static-file: ocp_on_gcp_static_data.yaml
+    - gcp_linked_ocp:
+        type: GCP
+        static-file: gcp_static_data.yaml
