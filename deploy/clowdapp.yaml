@@ -19,6 +19,8 @@ objects:
     insights-password: ''
     insights-account: ''
     insights-org-id: ''
+    gcp-dataset: ''
+    gcp-project-id: ''
   type: Opaque
 
 - apiVersion: cloud.redhat.com/v1alpha1
@@ -89,6 +91,18 @@ objects:
             valueFrom:
               secretKeyRef:
                 key: insights-org-id
+                name: nise-populator-secret
+                optional: true
+          - name: GCP_DATASET
+            valueFrom:
+              secretKeyRef:
+                key: gcp-dataset
+                name: nise-populator-secret
+                optional: true
+          - name: GCP_PROJECT_ID
+            valueFrom:
+              secretKeyRef:
+                key: gcp-project-id
                 name: nise-populator-secret
                 optional: true
         resources:
