@@ -172,21 +172,6 @@ objects:
                       key: insights-org-id
                       name: ${NAME}-secret
                       optional: false
-                - name: GCP_DATASET
-                  valueFrom:
-                    secretKeyRef:
-                      key: gcp-dataset
-                      name: ${NAME}-secret
-                      optional: false
-                - name: GCP_PROJECT_ID
-                  valueFrom:
-                    secretKeyRef:
-                      key: gcp-project-id
-                      name: ${NAME}-secret
-                      optional: false
-                - name: GOOGLE_APPLICATION_CREDENTIALS
-                  value: ${GOOGLE_APPLICATION_CREDENTIALS}
-                # Does GOOGLE_APPLICATION_CREDENTIALS need to be in the parameters
             restartPolicy: OnFailure
 
 parameters:
@@ -275,7 +260,3 @@ parameters:
   name: INSIGHTS_ACCOUNT_ID
 - displayName: Insights Organization ID
   name: INSIGHTS_ORG_ID
-- displayName: GCP Dataset
-  name: GCP_DATASET
-- displayName: GCP Project ID
-  name: GCP_PROJECT_ID
