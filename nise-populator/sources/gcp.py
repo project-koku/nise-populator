@@ -15,6 +15,9 @@ LOG = logging.getLogger(__name__)
 class GCP(Source):
     """Defining the AWS source class."""
 
+    BUCKET = "bucket"
+    REPORT_PREFIX = "report_prefix"
+    REPORT_NAME = "report_name"
     DATASET = "dataset"
     PROJECT_ID = "project_id"
 
@@ -23,6 +26,10 @@ class GCP(Source):
         self.kwargs = kwargs
         self.dataset = os.environ.get("GCP_DATASET")
         self.project_id = os.environ.get("GCP_PROJECT_ID")
+        self.s3_bucket = kwargs.get(self.BUCKET)
+        self.report_prefix = kwargs.get(self.REPORT_PREFIX, "cur")
+        self.report_name = kwargs.get(self.REPORT_NAME, "cur")
+        self.static_file = kwargs.get(self.STATIC_FILE)
         super().__init__(**kwargs)
 
     @staticmethod
@@ -40,11 +47,14 @@ class GCP(Source):
         return True
 
     def generate(self):
-        """Create data and upload it to the necessary location."""
         options = {
             "start_date": self.start_date,
             "end_date": self.end_date,
             "gcp_dataset_name": self.dataset,
+            "gcp_table_name": self.table_name, # need to figure this out
+            "gcp_report_prefix": self.report_prefix,
+            "gcp_report_name": self.report_name,
+            "gcp_bucket_name": self.s3_bucket,
         }
         if self.static_file:
             static_file_data = Source.obtain_static_file_data(
