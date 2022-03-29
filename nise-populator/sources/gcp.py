@@ -1,8 +1,5 @@
 import logging
 import os
-
-import boto3
-from botocore.exceptions import ClientError
 from nise.report import gcp_create_report
 
 from sources.source import Source

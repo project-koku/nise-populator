@@ -33,4 +33,4 @@ sources:
         type: GCP
         static-file: gcp_static_data.yaml
         etag: 2SKJ3
-        bucket: example_bucket_name
+        bucket: nisepopulator
