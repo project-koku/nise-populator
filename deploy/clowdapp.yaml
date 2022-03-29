@@ -105,6 +105,9 @@ objects:
                 key: gcp-project-id
                 name: nise-populator-secret
                 optional: true
+          - description: GCP Credentials Location
+            name: GOOGLE_APPLICATION_CREDENTIALS
+            value: /etc/gcp/gcp-credentials-qe.json
         resources:
           requests:
             cpu: ${CPU_REQUEST}
@@ -112,6 +115,17 @@ objects:
           limits:
             cpu: ${CPU_LIMIT}
             memory: ${MEMORY_LIMIT}
+        volumeMounts:
+        - mountPath: /etc/gcp
+          name: gcp-credentials-qe
+          readOnly: true
+        volumes:
+        - name: gcp-credentials-qe
+          secret:
+            items:
+            - key: gcp-credentials-qe
+              path: gcp-credentials-qe.json
+            secretName: koku-gcp
 
 
 
