@@ -36,7 +36,6 @@ class GCP(Source):
 
     def check_configuration(self):
         """Determine if source is properly configured for access."""
-        # TODO: See if we have bigquery
         return True
 
     def setup(self):
