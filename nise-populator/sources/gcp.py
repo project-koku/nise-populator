@@ -9,23 +9,20 @@ from sources.source import Source
 
 LOG = logging.getLogger(__name__)
 
-# TODO: I think nise will need the GOOGLE_APPLICATION_CREDENTIALS
-# to upload to the container.
-
 class GCP(Source):
-    """Defining the AWS source class."""
+    """Defining the GCP source class."""
 
     BUCKET = "bucket"
     REPORT_PREFIX = "report_prefix"
     REPORT_NAME = "report_name"
-    DATASET = "dataset"
-    PROJECT_ID = "project_id"
+    ETAG = "etag"
 
     def __init__(self, **kwargs):
         """Initialize the source with configuration data."""
         self.kwargs = kwargs
         self.dataset = os.environ.get("GCP_DATASET")
         self.project_id = os.environ.get("GCP_PROJECT_ID")
+        self.etag = kwargs.get(self.ETAG)
         self.s3_bucket = kwargs.get(self.BUCKET)
         self.report_prefix = kwargs.get(self.REPORT_PREFIX, "cur")
         self.report_name = kwargs.get(self.REPORT_NAME, "cur")
@@ -51,10 +48,10 @@ class GCP(Source):
             "start_date": self.start_date,
             "end_date": self.end_date,
             "gcp_dataset_name": self.dataset,
-            "gcp_table_name": self.table_name, # need to figure this out
             "gcp_report_prefix": self.report_prefix,
             "gcp_report_name": self.report_name,
             "gcp_bucket_name": self.s3_bucket,
+            "gcp_etag": self.etag,
         }
         if self.static_file:
             static_file_data = Source.obtain_static_file_data(

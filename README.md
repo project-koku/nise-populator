@@ -26,6 +26,7 @@ INSIGHTS_URL=INSIGHTS_URL
 
 GCP_DATASET=GCP_DATASET
 GCP_PROJECT_ID=GCP_PROJECT_ID
+GOOGLE_APPLICATION_CREDENTIALS=/path/to/creds.json
 ```
 3. Then project dependencies and a virtual environment can be created using :
 ```
