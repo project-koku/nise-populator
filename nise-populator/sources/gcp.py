@@ -20,9 +20,8 @@ class GCP(Source):
         self.dataset = os.environ.get("GCP_DATASET")
         self.project_id = os.environ.get("GCP_PROJECT_ID")
         self.etag = kwargs.get(self.ETAG)
-        self.s3_bucket = kwargs.get(self.BUCKET)
+        self.bucket = kwargs.get(self.BUCKET)
         self.report_prefix = kwargs.get(self.REPORT_PREFIX, "cur")
-        self.report_name = kwargs.get(self.REPORT_NAME, "cur")
         self.static_file = kwargs.get(self.STATIC_FILE)
         super().__init__(**kwargs)
 
@@ -45,8 +44,7 @@ class GCP(Source):
             "end_date": self.end_date,
             "gcp_dataset_name": self.dataset,
             "gcp_report_prefix": self.report_prefix,
-            "gcp_report_name": self.report_name,
-            "gcp_bucket_name": self.s3_bucket,
+            "gcp_bucket_name": self.bucket,
             "gcp_etag": self.etag,
         }
         if self.static_file:
