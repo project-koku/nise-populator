@@ -9,7 +9,7 @@ generators:
       currency: USD
       instance_type: m2-megamem-416
       location.region: australia-southeast1-a
-      labels: [{"environment": "clyde", "app":"winter", "version":"green", "kubernetes-io-cluster-test-ocp-gcp-cluster": "owned"}]
+      labels: [{"environment": "clyde", "app":"winter", "version":"green", "kubernetes-io-cluster-c32se93c-73z3-3s3d-cs23-d3245sj45349": "owned"}]
   - CloudStorageGenerator:
       start_date: 2022-01-01
       end_date: 2022-01-31
@@ -18,21 +18,21 @@ generators:
       service.description: Storage
       currency: USD
       location.region: australia-southeast1-a
-      labels: [{"environment": "murphy", "app":"spring", "version":"blue", "kubernetes-io-cluster-test-ocp-gcp-cluster": "owned"}]
+      labels: [{"environment": "murphy", "app":"spring", "version":"blue", "kubernetes-io-cluster-c32se93c-73z3-3s3d-cs23-d3245sj45349": "owned"}]
   - GCPNetworkGenerator:
       start_date: 2022-01-01
       end_date: 2022-01-31
       service.description: Cloud DNS
       currency: USD
       location.region: us-west1-a
-      labels: [{"environment": "ruby", "app":"fall", "version":"red", "kubernetes-io-cluster-test-ocp-gcp-cluster": "owned"}]
+      labels: [{"environment": "ruby", "app":"fall", "version":"red", "kubernetes-io-cluster-c32se93c-73z3-3s3d-cs23-d3245sj45349": "owned"}]
   - GCPDatabaseGenerator:
       start_date: 2022-01-01
       end_date: 2022-01-31
       service.description: Cloud SQL
       currency: USD
       location.region: us-west1-a
-      labels: [{"environment": "ruby", "app":"snowdown", "version":"red", "kubernetes-io-cluster-test-ocp-gcp-cluster": "owned"}]
+      labels: [{"environment": "ruby", "app":"snowdown", "version":"red", "kubernetes-io-cluster-c32se93c-73z3-3s3d-cs23-d3245sj45349": "owned"}]
 
 projects:
   -
