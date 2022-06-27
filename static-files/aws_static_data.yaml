@@ -213,7 +213,14 @@ generators:
       product_name: Amazon Relational Database Service
       tags:
         resourceTags/user:app: analytics
-
+  - MarketplaceGenerator:
+      start_date: 2022-01-01
+      processor_arch: 32-bit
+      resource_id: 55555555
+      product_sku: 6PTBC5PQDGESPVMV
+      region: us-east-1a
+      tags:
+        resourceTags/aws:createdBy: AssumedRole:AROAYSLL3JVQ6DYUNKWQJ:1637692740557658269
 
 accounts:
   payer: 673985673683
