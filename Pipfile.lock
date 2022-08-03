@@ -458,7 +458,7 @@
                 "sha256:1c3b5989700b1a50082994248f1e23d95f05487b9b9edeacf2ef6a60d1f2b02f"
             ],
             "index": "pypi",
-            "version": "==2.7.2"
+            "version": "==2.9.8"
         },
         "markupsafe": {
             "hashes": [
