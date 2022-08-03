@@ -454,8 +454,8 @@
         },
         "koku-nise": {
             "hashes": [
-                "sha256:17003ed554724163f23a4e71903c07543bc5769e053b60997bf6411325041431",
-                "sha256:71f3af1042161d9484b43d6ac7b88d8d6f94c14c8140b51e640629c66a99e3b3"
+                "sha256:15fd534f61f31f7334fd3d3216da757114c45d7700d206dece4e059b508b2b6c",
+                "sha256:1c3b5989700b1a50082994248f1e23d95f05487b9b9edeacf2ef6a60d1f2b02f"
             ],
             "index": "pypi",
             "version": "==2.7.2"
