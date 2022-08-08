@@ -27,3 +27,6 @@ lint:
 
 build:
 	$(CONTAINERER) build . -t $(CONTAINER_TAG)
+
+requirements:
+	pipenv lock
