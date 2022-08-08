@@ -130,3 +130,8 @@ dmypy.json
 
 # openshift parameters
 openshift/parameters.properties
+
+# Editors
+.vscode/
+.idea/
+*.code-workspace

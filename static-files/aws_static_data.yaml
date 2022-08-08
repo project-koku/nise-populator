@@ -219,8 +219,10 @@ generators:
       resource_id: 55555555
       product_sku: 6PTBC5PQDGESPVMV
       region: us-east-1a
-      tags:
-        resourceTags/aws:createdBy: AssumedRole:AROAYSLL3JVQ6DYUNKWQJ:1637692740557658269
+      # TODO: FIX THIS
+      # (ValueError: dict contains fields not in fieldnames: 'resourceTags/aws:createdBy')
+      # tags:
+      #   resourceTags/aws:createdBy: AssumedRole:AROAYSLL3JVQ6DYUNKWQJ:1637692740557658269
       instance_type:
         inst_type: m5.large
         vcpu: 2
