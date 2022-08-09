@@ -108,6 +108,8 @@ objects:
           - description: GCP Credentials Location
             name: GOOGLE_APPLICATION_CREDENTIALS
             value: /etc/gcp/gcp-credentials-qe.json
+          - name: OCI_PYTHON_SDK_NO_SERVICE_IMPORTS
+            value: 'true'
         resources:
           requests:
             cpu: ${CPU_REQUEST}
