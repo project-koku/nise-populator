@@ -1,40 +1,48 @@
 import logging
 import os
 
-from nise.report import gcp_create_report
+from nise.report import oci_create_report
+from oci.config import from_file
+from oci.config import validate_config
+from oci.exceptions import ConfigFileNotFound
+from oci.exceptions import InvalidConfig
+from oci.exceptions import InvalidKeyFilePath
 
 from sources.source import Source
 
 LOG = logging.getLogger(__name__)
 
 
-class GCP(Source):
-    """Defining the GCP source class."""
+class OCI(Source):
+    """Defining the OCI source class."""
 
     BUCKET = "bucket"
-    REPORT_PREFIX = "report_prefix"
-    REPORT_NAME = "report_name"
-    ETAG = "etag"
 
     def __init__(self, **kwargs):
         """Initialize the source with configuration data."""
         self.kwargs = kwargs
-        self.dataset = os.environ.get("GCP_DATASET")
-        self.project_id = os.environ.get("GCP_PROJECT_ID")
-        self.etag = kwargs.get(self.ETAG)
         self.bucket = kwargs.get(self.BUCKET)
-        self.report_prefix = kwargs.get(self.REPORT_PREFIX, "cur")
         self.static_file = kwargs.get(self.STATIC_FILE)
         super().__init__(**kwargs)
 
     @staticmethod
     def get_source_type():
         """Returns the source type for the factory."""
-        return "GCP"
+        return "OCI"
 
     def check_configuration(self):
         """Determine if source is properly configured for access."""
-        return True
+        try:
+            if not self.bucket:
+                LOG.info("Missing bucket name.")
+                return False
+            if self.bucket and "OCI_CONFIG_FILE" in os.environ:
+                config = from_file(file_location=os.environ["OCI_CONFIG_FILE"])
+                validate_config(config)
+                return True
+        except (ConfigFileNotFound, InvalidConfig, InvalidKeyFilePath) as err:
+            LOG.error(f"Error : {err}")
+            return False
 
     def setup(self):
         """Perform necessary setup, like cleaning up existing objectstorage."""
@@ -44,14 +52,11 @@ class GCP(Source):
         options = {
             "start_date": self.start_date,
             "end_date": self.end_date,
-            "gcp_dataset_name": self.dataset,
-            "gcp_report_prefix": self.report_prefix,
-            "gcp_bucket_name": self.bucket,
-            "gcp_etag": self.etag,
+            "oci_bucket_name": self.bucket,
         }
         if self.static_file:
             static_file_data = Source.obtain_static_file_data(
                 self.static_file, self.start_date, self.end_date
             )
             options["static_report_data"] = static_file_data
-        gcp_create_report(options)
+        oci_create_report(options)
