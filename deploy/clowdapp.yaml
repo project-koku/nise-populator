@@ -110,6 +110,9 @@ objects:
             value: /etc/gcp/gcp-credentials-qe.json
           - name: OCI_PYTHON_SDK_NO_SERVICE_IMPORTS
             value: 'true'
+          - description: OCI Credentials Location
+            name: OCI_CONFIG_FILE
+            value: /etc/oci/config
         resources:
           requests:
             cpu: ${CPU_REQUEST}
