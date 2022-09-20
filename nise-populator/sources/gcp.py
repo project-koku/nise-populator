@@ -46,6 +46,7 @@ class GCP(Source):
             "gcp_report_prefix": self.report_prefix,
             "gcp_bucket_name": self.bucket,
             "gcp_etag": self.etag,
+            "gcp_resource_level": True
         }
         if self.static_file:
             static_file_data = Source.obtain_static_file_data(
