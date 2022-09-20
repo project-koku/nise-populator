@@ -17,7 +17,6 @@ class SourceFactory:
         """Initialize the factory with source configuration."""
         self.source_config = source_config
         self.valid_sources = [AWS, Azure, OCP, GCP, OCI]
-        self.valid_sources = [OCI]
         self.valid_source_map = {}
         for valid_source in self.valid_sources:
             self.valid_source_map[
