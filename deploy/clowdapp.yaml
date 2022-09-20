@@ -21,6 +21,12 @@ objects:
     insights-org-id: ''
     gcp-dataset: ''
     gcp-project-id: ''
+    oci-cli-user: ''
+    oci-cli-fingerprint: ''
+    oci-cli-tenancy: ''
+    oci-credentials: ''
+    oci-cost-mgmt-bucket: ''
+    oci-region: ''
   type: Opaque
 
 - apiVersion: cloud.redhat.com/v1alpha1
@@ -110,9 +116,42 @@ objects:
             value: /etc/gcp/gcp-credentials-qe.json
           - name: OCI_PYTHON_SDK_NO_SERVICE_IMPORTS
             value: 'true'
-          - description: OCI Credentials Location
-            name: OCI_CONFIG_FILE
-            value: /etc/oci/config
+          - name: OCI_USER
+            value:
+              secretKeyRef:
+                key: oci-user
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_FINGERPRINT
+            value:
+              secretKeyRef:
+                key: oci-fingerprint
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_TENANCY
+            value:
+              secretKeyRef:
+                key: oci-tenancy
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_CREDENTIALS
+            value:
+              secretKeyRef:
+                key: oci-credentials
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_BUCKET_NAME
+            valueFrom:
+              secretKeyRef:
+                key: oci-bucket
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_REGION
+            valueFrom:
+              secretKeyRef:
+                key: oci-region
+                name: nise-populator-secret
+                optional: true
         resources:
           requests:
             cpu: ${CPU_REQUEST}
