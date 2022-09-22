@@ -32,9 +32,9 @@ class OCI(Source):
         """Determine if source is properly configured for access."""
         try:
             config = {
-                "user": os.environ.get("OCI_CLI_USER"),
-                "fingerprint": os.environ.get("OCI_CLI_FINGERPRINT"),
-                "tenancy": os.environ.get("OCI_CLI_TENANCY"),
+                "user": os.environ.get("OCI_USER"),
+                "fingerprint": os.environ.get("OCI_FINGERPRINT"),
+                "tenancy": os.environ.get("OCI_TENANCY"),
                 "key_content": os.environ.get("OCI_CREDENTIALS"),
                 "region": os.environ.get("OCI_REGION"),
             }

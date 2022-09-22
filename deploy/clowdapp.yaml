@@ -27,6 +27,7 @@ objects:
     oci-credentials: ''
     oci-bucket-name: ''
     oci-region: ''
+    oci-namespace: ''
   type: Opaque
 
 - apiVersion: cloud.redhat.com/v1alpha1
@@ -150,6 +151,12 @@ objects:
             valueFrom:
               secretKeyRef:
                 key: oci-region
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_NAMESPACE
+            valueFrom:
+              secretKeyRef:
+                key: oci-namespace
                 name: nise-populator-secret
                 optional: true
         resources:
