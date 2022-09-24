@@ -33,7 +33,7 @@ sources:
         type: GCP
         static-file: gcp_static_data.yaml
         etag: 2SKJ3
-        bucket: nisepopulator
+        bucket: cost_qa_bucket
     - oci_linked_ocp:
         type: OCI
         static-file: oci_static_data.yml
