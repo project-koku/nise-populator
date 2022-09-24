@@ -2,6 +2,7 @@ import logging
 import os
 
 from nise.report import oci_create_report
+from oci.config import from_file
 from oci.config import validate_config
 from oci.exceptions import ConfigFileNotFound
 from oci.exceptions import InvalidConfig
@@ -31,13 +32,19 @@ class OCI(Source):
     def check_configuration(self):
         """Determine if source is properly configured for access."""
         try:
-            config = {
-                "user": os.environ.get("OCI_USER"),
-                "fingerprint": os.environ.get("OCI_FINGERPRINT"),
-                "tenancy": os.environ.get("OCI_TENANCY"),
-                "key_content": os.environ.get("OCI_CREDENTIALS"),
-                "region": os.environ.get("OCI_REGION"),
-            }
+            if "OCI_CONFIG_FILE" in os.environ:
+                config = from_file(
+                    file_location=os.environ.get("OCI_CONFIG_FILE")
+                )
+            else:
+                config = {
+                    "user": os.environ.get("OCI_USER"),
+                    "fingerprint": os.environ.get("OCI_FINGERPRINT"),
+                    "tenancy": os.environ.get("OCI_TENANCY"),
+                    "key_content": os.environ.get("OCI_CREDENTIALS"),
+                    "region": os.environ.get("OCI_REGION"),
+                }
+
             validate_config(config)
             return True
         except (ConfigFileNotFound, InvalidConfig, InvalidKeyFilePath) as err:
