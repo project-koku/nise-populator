@@ -120,43 +120,43 @@ objects:
           - description: OCI Credentials Location
             name: OCI_CONFIG_FILE
             value: /etc/oci/config
-          # - name: OCI_USER
-          #   value:
-          #     secretKeyRef:
-          #       key: oci-user
-          #       name: nise-populator-secret
-          #       optional: true
-          # - name: OCI_FINGERPRINT
-          #   value:
-          #     secretKeyRef:
-          #       key: oci-fingerprint
-          #       name: nise-populator-secret
-          #       optional: true
-          # - name: OCI_TENANCY
-          #   value:
-          #     secretKeyRef:
-          #       key: oci-tenancy
-          #       name: nise-populator-secret
-          #       optional: true
-          # - name: OCI_CREDENTIALS
-          #   value:
-          #     secretKeyRef:
-          #       key: oci-credentials
-          #       name: nise-populator-secret
-          #       optional: true
-          # - name: OCI_BUCKET_NAME
-          #   valueFrom:
-          #     secretKeyRef:
-          #       key: oci-bucket-name
-          #       name: nise-populator-secret
-          #       optional: true
-          # - name: OCI_REGION
-          #   valueFrom:
-          #     secretKeyRef:
-          #       key: oci-region
-          #       name: nise-populator-secret
-          #       optional: true
-          # - name: OCI_NAMESPACE
+          - name: OCI_USER
+            value:
+              secretKeyRef:
+                key: oci-user
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_FINGERPRINT
+            value:
+              secretKeyRef:
+                key: oci-fingerprint
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_TENANCY
+            value:
+              secretKeyRef:
+                key: oci-tenancy
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_CREDENTIALS
+            value:
+              secretKeyRef:
+                key: oci-credentials
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_BUCKET_NAME
+            valueFrom:
+              secretKeyRef:
+                key: oci-bucket-name
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_REGION
+            valueFrom:
+              secretKeyRef:
+                key: oci-region
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_NAMESPACE
             valueFrom:
               secretKeyRef:
                 key: oci-namespace
