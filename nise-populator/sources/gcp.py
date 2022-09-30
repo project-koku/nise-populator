@@ -1,10 +1,12 @@
 import logging
 import os
+
 from nise.report import gcp_create_report
 
 from sources.source import Source
 
 LOG = logging.getLogger(__name__)
+
 
 class GCP(Source):
     """Defining the GCP source class."""
@@ -46,7 +48,7 @@ class GCP(Source):
             "gcp_report_prefix": self.report_prefix,
             "gcp_bucket_name": self.bucket,
             "gcp_etag": self.etag,
-            "gcp_resource_level": True
+            "gcp_resource_level": True,
         }
         if self.static_file:
             static_file_data = Source.obtain_static_file_data(

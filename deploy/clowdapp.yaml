@@ -21,6 +21,13 @@ objects:
     insights-org-id: ''
     gcp-dataset: ''
     gcp-project-id: ''
+    oci-user: ''
+    oci-fingerprint: ''
+    oci-tenancy: ''
+    oci-credentials: ''
+    oci-bucket-name: ''
+    oci-region: ''
+    oci-namespace: ''
   type: Opaque
 
 - apiVersion: cloud.redhat.com/v1alpha1
@@ -110,6 +117,52 @@ objects:
             value: /etc/gcp/gcp-credentials-qe.json
           - name: OCI_PYTHON_SDK_NO_SERVICE_IMPORTS
             value: 'true'
+          # - description: OCI Credentials Location
+          #   name: OCI_CONFIG_FILE
+          #   value: /etc/oci/config
+          - name: OCI_USER
+            valueFrom:
+              secretKeyRef:
+                key: oci-user
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_FINGERPRINT
+            valueFrom:
+              secretKeyRef:
+                key: oci-fingerprint
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_TENANCY
+            valueFrom:
+              secretKeyRef:
+                key: oci-tenancy
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_CREDENTIALS
+            valueFrom:
+              secretKeyRef:
+                key: oci-credentials
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_BUCKET_NAME
+            valueFrom:
+              secretKeyRef:
+                key: oci-bucket-name
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_REGION
+            valueFrom:
+              secretKeyRef:
+                key: oci-region
+                name: nise-populator-secret
+                optional: true
+          - name: OCI_NAMESPACE
+            valueFrom:
+              secretKeyRef:
+                key: oci-namespace
+                name: nise-populator-secret
+                optional: true
+
         resources:
           requests:
             cpu: ${CPU_REQUEST}

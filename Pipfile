@@ -9,6 +9,7 @@ pre-commit = "*"
 koku-nise = "*"
 pyyaml = "*"
 azure-storage-blob = "*"
+oci = "*"
 
 [dev-packages]
 
