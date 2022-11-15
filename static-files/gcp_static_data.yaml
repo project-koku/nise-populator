@@ -56,7 +56,7 @@ generators:
       service.description: Storage
       currency: USD
       location.region: australia-southeast1-a
-      labels: [{"environment": "murphy", "app":"spring", "version":"blue", "kubernetes-io-cluster-c32se93c-73z3-3s3d-cs23-d3245sj45349": "owned"}]
+      labels: [{"openshift_node": "gcp_compute1","environment": "murphy", "app":"spring", "version":"blue", "kubernetes-io-cluster-c32se93c-73z3-3s3d-cs23-d3245sj45349": "owned"}]
   - GCPNetworkGenerator:
       start_date: 2022-01-01
       end_date: 2022-01-31
