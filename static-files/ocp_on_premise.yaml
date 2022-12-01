@@ -55,6 +55,7 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: compute_2
+          node_labels: label_nodeclass:compute|label_node_role_kubernetes_io:infra
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -301,7 +302,7 @@ generators:
         - node:
           node_name: master_1
           cpu_cores: 4
-          memory_gig: 8
+          memory_gig: 12
           namespaces:
             kube-system:
               pods:
@@ -321,10 +322,19 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
         - node:
           node_name: master_2
           cpu_cores: 4
-          memory_gig: 8
+          memory_gig: 12
           namespaces:
             kube-system:
               pods:
@@ -344,10 +354,19 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
         - node:
           node_name: master_3
           cpu_cores: 4
-          memory_gig: 8
+          memory_gig: 12
           namespaces:
             kube-system:
               pods:
@@ -362,6 +381,15 @@ generators:
               pods:
                 - pod:
                   pod_name: pod_name18
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1

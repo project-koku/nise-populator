@@ -72,7 +72,7 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: gcp_compute2
-          node_labels: label_nodeclass:compute
+          node_labels: label_nodeclass:compute|label_node_role_kubernetes_io:infra
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -144,8 +144,8 @@ generators:
         - node:
           node_name: gcp_master
           node_labels: label_nodeclass:master
-          cpu_cores: 2
-          memory_gig: 8
+          cpu_cores: 4
+          memory_gig: 12
           namespaces:
             kube-system:
               pods:
@@ -167,3 +167,12 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:ruby|label_app:summer|label_version:yellow
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
