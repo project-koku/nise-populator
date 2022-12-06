@@ -57,8 +57,60 @@ generators:
       start_date: 2019-04-01
       end_date: 2019-07-31
       processor_arch: 64-bit
+      resource_id: 55555552
+      product_sku: VEAJHRNKTJAC
+      region: us-east-1a
+      tags:
+        resourceTags/user:environment: prod
+        resourceTags/user:version: echo
+      instance_type:
+        inst_type: m5.large
+        vcpu: 2
+        memory: '8 GiB'
+        storage: 'EBS Only'
+        family: 'General Purpose'
+        cost: 0.096
+        rate: 0.096
+  - EC2Generator:
+      start_date: 2019-04-01
+      end_date: 2019-07-31
+      processor_arch: 64-bit
+      resource_id: 55555558
+      product_sku: VEAJHRNKTJAD
+      region: us-east-1a
+      tags:
+        resourceTags/user:version: master
+      instance_type:
+        inst_type: m5.large
+        vcpu: 2
+        memory: '8 GiB'
+        storage: 'EBS Only'
+        family: 'General Purpose'
+        cost: 0.096
+        rate: 0.096
+  - EC2Generator:
+      start_date: 2019-04-01
+      end_date: 2019-07-31
+      processor_arch: 64-bit
       resource_id: 55555558
       product_sku: VEAJHRNKTJAC
+      region: us-east-1a
+      tags:
+        resourceTags/user:version: master
+      instance_type:
+        inst_type: m5.large
+        vcpu: 2
+        memory: '8 GiB'
+        storage: 'EBS Only'
+        family: 'General Purpose'
+        cost: 0.096
+        rate: 0.096
+  - EC2Generator:
+      start_date: 2019-04-01
+      end_date: 2019-07-31
+      processor_arch: 64-bit
+      resource_id: 55555559
+      product_sku: VEAJHRNKTJAE
       region: us-east-1a
       tags:
         resourceTags/user:version: master
