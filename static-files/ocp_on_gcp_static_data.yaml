@@ -72,7 +72,6 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: gcp_compute2
-          node_labels: label_nodeclass:compute
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -142,6 +141,30 @@ generators:
                     labels: label_environment:murphy|label_app:spring|label_version:blue|label_storageclass:orange
                     capacity_gig: 20
         - node:
+          node_name: gcp_compute4
+          node_labels: label_nodeclass:compute|label_node_role_kubernetes_io:infra
+          cpu_cores: 4
+          memory_gig: 16
+          namespaces:
+            analytics:
+              pods:
+                - pod:
+                  pod_name: pod_name9a
+                  cpu_request: 2
+                  mem_request_gig: 4
+                  cpu_limit: 2
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:bonnie|label_app:autumn|label_version:purple
+                - pod:
+                  pod_name: pod_name9b
+                  cpu_request: 2
+                  mem_request_gig: 4
+                  cpu_limit: 2
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:bonnie|label_app:autumn|label_version:purple|label_qa:checked
+        - node:
           node_name: gcp_master
           node_labels: label_nodeclass:master
           cpu_cores: 2
@@ -167,3 +190,47 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:ruby|label_app:summer|label_version:yellow
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+        - node:
+          node_name: gcp_master_2
+          node_labels: label_nodeclass:master
+          cpu_cores: 4
+          memory_gig: 12
+          namespaces:
+            kube-system:
+              pods:
+                - pod:
+                  pod_name: pod_name7
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:mabry|label_app:season|label_version:orange
+            openshift:
+              pods:
+                - pod:
+                  pod_name: pod_name8
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:mabry|label_app:season|label_version:orange
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600

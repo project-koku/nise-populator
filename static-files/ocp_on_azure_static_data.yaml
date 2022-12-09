@@ -111,6 +111,35 @@ generators:
                     labels: label_environment:Mars|label_app:weather|label_version:Andromeda|label_storageclass:Thor
                     capacity_gig: 20
         - node:
+          node_name: azure_compute_4
+          node_labels: label_nodeclass:compute|label_node_role_kubernetes_io:infra
+          cpu_cores: 4
+          memory_gig: 12
+          resource_id: 99999992
+          namespaces:
+            sunshine:
+              pods:
+                - pod:
+                  pod_name: pod_name9
+                  cpu_request: 2
+                  mem_request_gig: 4
+                  cpu_limit: 2
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:Saturn|label_app:sunshine|label_version:Cartwheel
+              volumes:
+                - volume:
+                  volume_name: pvc-volume_5
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Saturn|label_app:sunshine|label_version:Cartwheel|label_storageclass:Thor
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name9_data
+                    pod_name: pod_name9
+                    labels: label_environment:Mars|label_app:sunshine|label_version:Cartwheel|label_storageclass:Thor
+                    capacity_gig: 20
+        - node:
           node_name: azure_master
           cpu_cores: 2
           memory_gig: 8
@@ -136,3 +165,47 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Jupiter|label_app:Sombrero|label_version:Sombrero
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+        - node:
+          node_name: azure_master_2
+          cpu_cores: 4
+          memory_gig: 12
+          resource_id: 99999999
+          namespaces:
+            kube-system:
+              pods:
+                - pod:
+                  pod_name: pod_name7
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:Venus|label_app:Antennae|label_version:Antennae
+            openshift:
+              pods:
+                - pod:
+                  pod_name: pod_name8
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:Venus|label_app:Antennae|label_version:Antennae
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600

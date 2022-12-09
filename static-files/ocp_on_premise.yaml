@@ -299,6 +299,56 @@ generators:
                     labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
                     capacity_gig: 20
         - node:
+          node_name: compute_7
+          node_labels: label_nodeclass:compute|label_node_role_kubernetes_io:infra
+          cpu_cores: 4
+          memory_gig: 16
+          namespaces:
+            Cary:
+              pods:
+                - pod:
+                  pod_name: pod_name19
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_application:MongoDB|label_stage:Production|label_group:Sales
+              volumes:
+                - volume:
+                  volume_name: pvc-volume_13
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Production|label_app:MongoDB|label_version:Production|label_storageclass:gold
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name19_data
+                    pod_name: pod_name19
+                    labels: label_environment:Production|label_app:MongoDB|label_version:Production|label_storageclass:gold
+                    capacity_gig: 20
+            Garner:
+              pods:
+                - pod:
+                  pod_name: pod_name20
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_application:Istio|label_stage:Development|label_group:Engineering
+              volumes:
+                - volume:
+                  volume_name: pvc-volume_14
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+        - node:
           node_name: master_1
           cpu_cores: 4
           memory_gig: 8
@@ -362,6 +412,38 @@ generators:
               pods:
                 - pod:
                   pod_name: pod_name18
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+        - node:
+          node_name: master_4
+          cpu_cores: 4
+          memory_gig: 12
+          namespaces:
+            kube-system:
+              pods:
+                - pod:
+                  pod_name: pod_name21
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+            openshift:
+              pods:
+                - pod:
+                  pod_name: pod_name22
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1

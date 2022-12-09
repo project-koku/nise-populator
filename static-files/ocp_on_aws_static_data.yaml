@@ -111,8 +111,37 @@ generators:
                     labels: label_environment:prod|label_app:analytics|label_version:gamma|label_storageclass:charlie
                     capacity_gig: 20
         - node:
+          node_name: aws_compute_4
+          node_labels: label_nodeclass:compute|label_node_role_kubernetes_io:infra
+          cpu_cores: 4
+          memory_gig: 12
+          resource_id: 55555552
+          namespaces:
+            wolfpack:
+              pods:
+                - pod:
+                  pod_name: pod_name9
+                  cpu_request: 2
+                  mem_request_gig: 4
+                  cpu_limit: 2
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:prod|label_app:wolfpack|label_version:echo
+              volumes:
+                - volume:
+                  volume_name: pvc-volume_5
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:prod|label_app:wolfpack|label_version:echo|label_storageclass:delta
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name9_data
+                    pod_name: pod_name9
+                    labels: label_environment:prod|label_app:wolfpack|label_version:echo|label_storageclass:delta
+                    capacity_gig: 20
+        - node:
           node_name: aws_master
-          cpu_cores: 2
+          cpu_cores: 4
           memory_gig: 8
           resource_id: 55555558
           namespaces:
@@ -136,3 +165,38 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:dev|label_app:master|label_version:master
+        - node:
+          node_name: aws_master_2
+          cpu_cores: 4
+          memory_gig: 12
+          resource_id: 55555559
+          namespaces:
+            kube-system:
+              pods:
+                - pod:
+                  pod_name: pod_name7
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:prod|label_app:master|label_version:master
+            openshift:
+              pods:
+                - pod:
+                  pod_name: pod_name8
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_environment:dev|label_app:master|label_version:master
+            openshift-kube-apiserver:
+              pods:
+                - pod:
+                  pod_name: pod_apiserver
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
