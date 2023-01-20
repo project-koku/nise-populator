@@ -3,10 +3,12 @@ generators:
   - OCIComputeGenerator:
       start_date: 2022-08-01
       end_date: 2022-09-12
-      cost: 0.24389
+      unit_price: 0.341
+      consumed_quantity: 88583
       currency: USD
       compartment_name: richardprice
       tenant_id: ocid1.tenancy.oc1..EfjkUPxyZSYLvd
+      subscription_id: 25906734
       tags:
         tags/free-form-tag: certainly
         tags/orcl-cloud.free-tier-retained: result
@@ -14,10 +16,12 @@ generators:
   - OCIBlockStorageGenerator:
       start_date: 2022-08-01
       end_date: 2022-09-12
-      cost: 0.20768
+      unit_price: 0.156
+      consumed_quantity: 87278
       currency: USD
       compartment_name: richardprice
       tenant_id: ocid1.tenancy.oc1..EfjkUPxyZSYLvd
+      subscription_id: 25906734
       tags:
         tags/new-tags.tarnished-tags: environmental
         tags/orcl-cloud.free-tier-retained: political
@@ -25,19 +29,23 @@ generators:
   - OCINetworkGenerator:
       start_date: 2022-08-01
       end_date: 2022-09-12
-      cost: 0.38265
+      unit_price: 0.098
+      consumed_quantity: 14634
       currency: USD
       compartment_name: richardprice
       tenant_id: ocid1.tenancy.oc1..EfjkUPxyZSYLvd
+      subscription_id: 25906734
       tags:
         tags/free-form-tag: decision
 
   - OCIDatabaseGenerator:
       start_date: 2022-08-01
       end_date: 2022-09-12
-      cost: 0.17478
+      unit_price: 0.171
+      consumed_quantity: 27891
       currency: USD
       compartment_name: richardprice
       tenant_id: ocid1.tenancy.oc1..EfjkUPxyZSYLvd
+      subscription_id: 25906734
       tags:
         tags/free-form-tag: at
