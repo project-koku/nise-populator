@@ -2,9 +2,9 @@ import logging
 import os
 
 from azure.core.exceptions import ResourceExistsError
+from azure.core.exceptions import ServiceRequestError
+from azure.core.exceptions import ServiceResponseError
 from azure.storage.blob import BlobServiceClient
-from msrestazure.azure_exceptions import ClientException
-from msrestazure.azure_exceptions import CloudError
 from nise.report import azure_create_report
 
 from sources.source import Source
@@ -52,7 +52,7 @@ class Azure(Source):
             return True
         except (ResourceExistsError):
             return True
-        except (ClientException, CloudError) as err:
+        except (ServiceRequestError, ServiceResponseError) as err:
             LOG.info(f"Error: {err}")
             return False
 
