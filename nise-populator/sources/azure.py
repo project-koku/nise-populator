@@ -49,7 +49,7 @@ class Azure(Source):
         try:
             self.blob_service_client.create_container(self.storage_container)
             return True
-        except (ResourceExistsError):
+        except ResourceExistsError:
             return True
         except (HttpResponseError, ValueError) as err:
             LOG.info(f"Error: {err}")

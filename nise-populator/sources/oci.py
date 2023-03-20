@@ -63,6 +63,7 @@ class OCI(Source):
             "start_date": self.start_date,
             "end_date": self.end_date,
             "oci_bucket_name": self.bucket,
+            "oci_daily_report": True,
         }
         if self.static_file:
             static_file_data = Source.obtain_static_file_data(
