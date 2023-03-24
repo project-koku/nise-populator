@@ -8,7 +8,7 @@ def load_yaml_file(filename):
     yamlfile = None
     if filename:
         try:
-            with open(filename, "r") as yaml_file:
+            with open(filename) as yaml_file:
                 yamlfile = yaml.safe_load(yaml_file)
         except TypeError:
             yamlfile = yaml.safe_load(filename)
