@@ -1,3 +1,4 @@
+import datetime
 import logging
 import os
 
@@ -59,6 +60,7 @@ class OCI(Source):
         return True
 
     def generate(self):
+        self.start_date = datetime.datetime.today()
         options = {
             "start_date": self.start_date,
             "end_date": self.end_date,
