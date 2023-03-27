@@ -7,7 +7,7 @@ generators:
       consumed_quantity: 1219
       currency: USD
       compartment_name: richardprice
-      tenant_id: ocid1.tenancy.oc1..EfjkUPxyZSYLvd
+      tenant_id: ocid1.tenancy.oc1..vKlrzGToMPmkYGI
       subscription_id: 25906734
       tags:
         tags/free-form-tag: certainly
@@ -20,7 +20,7 @@ generators:
       consumed_quantity: 1089
       currency: USD
       compartment_name: richardprice
-      tenant_id: ocid1.tenancy.oc1..EfjkUPxyZSYLvd
+      tenant_id: ocid1.tenancy.oc1..vKlrzGToMPmkYGI
       subscription_id: 25906734
       tags:
         tags/new-tags.tarnished-tags: environmental
@@ -33,7 +33,7 @@ generators:
       consumed_quantity: 2005
       currency: USD
       compartment_name: richardprice
-      tenant_id: ocid1.tenancy.oc1..EfjkUPxyZSYLvd
+      tenant_id: ocid1.tenancy.oc1..vKlrzGToMPmkYGI
       subscription_id: 25906734
       tags:
         tags/free-form-tag: decision
@@ -45,7 +45,7 @@ generators:
       consumed_quantity: 2063
       currency: USD
       compartment_name: richardprice
-      tenant_id: ocid1.tenancy.oc1..EfjkUPxyZSYLvd
+      tenant_id: ocid1.tenancy.oc1..vKlrzGToMPmkYGI
       subscription_id: 25906734
       tags:
         tags/free-form-tag: at
