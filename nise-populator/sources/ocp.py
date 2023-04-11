@@ -48,6 +48,7 @@ class OCP(Source):
             "end_date": self.end_date,
             "ocp_cluster_id": self.cluster_id,
             "insights_upload": self.insights_url,
+            "ros_ocp_info": True,
         }
         if self.static_file:
             static_file_data = Source.obtain_static_file_data(
