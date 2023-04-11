@@ -1,4 +1,5 @@
 """A factory to create sources from a configuration."""
+import os
 import logging
 
 from sources.aws import AWS
@@ -16,7 +17,7 @@ class SourceFactory:
     def __init__(self, source_config):
         """Initialize the factory with source configuration."""
         self.source_config = source_config
-        self.valid_sources = [AWS, Azure, OCP, GCP, OCI]
+        self.valid_sources = self._create_valid_sources_list()
         self.valid_source_map = {}
         for valid_source in self.valid_sources:
             self.valid_source_map[
@@ -24,6 +25,26 @@ class SourceFactory:
             ] = valid_source
         self.sources = self._process_config()
         super().__init__()
+
+    def _create_valid_sources_list(self):
+        """Create a list of valid sources."""
+        comma_separate_sources = os.environ.get("POPULATE_SOURCES")
+        if not comma_separate_sources:
+            return [AWS, Azure, OCP, GCP, OCI]
+        valid_sources = []
+        sources_mapping = {
+            "aws": AWS,
+            "azure": Azure,
+            "ocp": OCP,
+            "gcp": GCP,
+            "oci": OCI
+        }
+        for provider_substring in comma_separate_sources.split(","):
+            key = provider_substring.lower().replace(" ", "")
+            if source_class := sources_mapping.get(key):
+                valid_sources.append(source_class)
+        LOG.debug(f"Populating sources: {valid_sources}")
+        return valid_sources
 
     def _process_config(self):
         """Create sources based on the source configuration."""
