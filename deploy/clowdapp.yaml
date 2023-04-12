@@ -115,6 +115,8 @@ objects:
           - description: GCP Credentials Location
             name: GOOGLE_APPLICATION_CREDENTIALS
             value: /etc/gcp/gcp-credentials-qe.json
+          - name: POPULATE_SOURCES
+            value: ${POPULATE_SOURCES}
           - name: OCI_PYTHON_SDK_NO_SERVICE_IMPORTS
             value: 'true'
           # - description: OCI Credentials Location
@@ -216,3 +218,5 @@ parameters:
   value: '0 15 * * *'
 - name: POPULATE_STARTING_DEADLINE
   value: '300'
+- name: POPULATE_SOURCES
+  value: 'AWS,Azure,OCP,GCP,OCI'
