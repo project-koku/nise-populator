@@ -20,6 +20,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Jupiter|label_app:mobile|label_version:Mars
+                  workload: deployment
               volumes:
                 - volume:
                   volume_name: pvc-volume_1
@@ -42,6 +43,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Jupiter|label_app:mobile|label_version:Mars
+                  workload: deployment
               volumes:
                 - volume:
                   volume_name: pvc-volume_2
@@ -70,6 +72,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:qe|label_app:banking|label_version:MilkyWay
+                  workload: deployment
               volumes:
                 - volume:
                   volume_name: pvc-volume_3
@@ -98,6 +101,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Mars|label_app:weather|label_version:Andromeda
+                  workload: deployment
               volumes:
                 - volume:
                   volume_name: pvc-volume_4
@@ -127,6 +131,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Saturn|label_app:sunshine|label_version:Cartwheel
+                  workload: deployment
               volumes:
                 - volume:
                   volume_name: pvc-volume_5
@@ -155,6 +160,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Mars|label_app:Sombrero|label_version:Sombrero
+                  workload: deployment
             openshift:
               pods:
                 - pod:
@@ -165,6 +171,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Jupiter|label_app:Sombrero|label_version:Sombrero
+                  workload: deployment
             openshift-kube-apiserver:
               pods:
                 - pod:
@@ -174,6 +181,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
         - node:
           node_name: azure_master_2
           cpu_cores: 4
@@ -190,6 +198,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Venus|label_app:Antennae|label_version:Antennae
+                  workload: deployment
             openshift:
               pods:
                 - pod:
@@ -200,6 +209,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:Venus|label_app:Antennae|label_version:Antennae
+                  workload: deployment
             openshift-kube-apiserver:
               pods:
                 - pod:
@@ -209,3 +219,4 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
