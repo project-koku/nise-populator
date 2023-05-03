@@ -20,6 +20,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:ruby|label_app:fall|label_version:red
+                  workload: deploymentconfig
                 - pod:
                   pod_name: pod_name1b
                   cpu_request: 1
@@ -28,6 +29,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:murphy|label_app:fall|label_version:red|label_qa:checked
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_1
@@ -50,6 +52,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:ruby|label_app:snowdown|label_version:red
+                  workload: deploymentconfig
                 - pod:
                   pod_name: pod_name2b
                   cpu_request: 1
@@ -58,6 +61,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:ruby|label_app:snowdown|label_version:red|label_qa:checked
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_2
@@ -85,6 +89,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:clyde|label_app:winter|label_version:green
+                  workload: deploymentconfig
                 - pod:
                   pod_name: pod_name3b
                   cpu_request: 1
@@ -93,6 +98,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:clyde|label_app:winter|label_version:green|label_qa:checked
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_3
@@ -120,6 +126,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:murphy|label_app:spring|label_version:blue
+                  workload: deploymentconfig
                 - pod:
                   pod_name: pod_name4b
                   cpu_request: 2
@@ -128,6 +135,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:murphy|label_app:spring|label_version:blue|label_qa:checked
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_4
@@ -156,6 +164,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:bonnie|label_app:autumn|label_version:purple
+                  workload: deploymentconfig
                 - pod:
                   pod_name: pod_name9b
                   cpu_request: 2
@@ -164,6 +173,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:bonnie|label_app:autumn|label_version:purple|label_qa:checked
+                  workload: deploymentconfig
         - node:
           node_name: gcp_master
           node_labels: label_nodeclass:master
@@ -180,6 +190,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:murphy|label_app:summer|label_version:yellow
+                  workload: deploymentconfig
             openshift:
               pods:
                 - pod:
@@ -190,6 +201,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:ruby|label_app:summer|label_version:yellow
+                  workload: deploymentconfig
             openshift-kube-apiserver:
               pods:
                 - pod:
@@ -199,6 +211,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deploymentconfig
         - node:
           node_name: gcp_master_2
           node_labels: label_nodeclass:master
@@ -215,6 +228,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:mabry|label_app:season|label_version:orange
+                  workload: deploymentconfig
             openshift:
               pods:
                 - pod:
@@ -225,6 +239,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:mabry|label_app:season|label_version:orange
+                  workload: deploymentconfig
             openshift-kube-apiserver:
               pods:
                 - pod:
@@ -234,3 +249,4 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deploymentconfig

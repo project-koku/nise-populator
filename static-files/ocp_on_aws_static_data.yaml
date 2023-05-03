@@ -20,6 +20,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:dev|label_app:catalog|label_version:prod
+                  workload: deployment
               volumes:
                 - volume:
                   volume_name: pvc-volume_1
@@ -42,6 +43,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:dev|label_app:catalog|label_version:prod
+                  workload: replicaset
               volumes:
                 - volume:
                   volume_name: pvc-volume_2
@@ -70,6 +72,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:qe|label_app:cost|label_version:beta
+                  workload: replicationcontroller
               volumes:
                 - volume:
                   volume_name: pvc-volume_3
@@ -98,6 +101,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:prod|label_app:analytics|label_version:gamma
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_4
@@ -127,6 +131,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:prod|label_app:wolfpack|label_version:echo
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_5
@@ -155,6 +160,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:prod|label_app:master|label_version:master
+                  workload: daemonset
             openshift:
               pods:
                 - pod:
@@ -165,6 +171,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:dev|label_app:master|label_version:master
+                  workload: daemonset
         - node:
           node_name: aws_master_2
           cpu_cores: 4
@@ -181,6 +188,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:prod|label_app:master|label_version:master
+                  workload: deployment
             openshift:
               pods:
                 - pod:
@@ -191,6 +199,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_environment:dev|label_app:master|label_version:master
+                  workload: deployment
             openshift-kube-apiserver:
               pods:
                 - pod:
@@ -200,3 +209,4 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment

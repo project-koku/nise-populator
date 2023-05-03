@@ -19,6 +19,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:OpenCart|label_stage:Production|label_group:Marketing
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_1
@@ -41,6 +42,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Phoenix|label_stage:Development|label_group:Engineering
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_2
@@ -68,6 +70,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Candlepin|label_stage:Development|label_group:Marketing
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_3
@@ -90,6 +93,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Candlepin|label_stage:Production|label_group:Sales
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_4
@@ -117,6 +121,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Cygwin|label_stage:Production|label_group:Marketing
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_5
@@ -139,6 +144,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Phoenix|label_stage:QA|label_group:Engineering
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_6
@@ -166,6 +172,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:CMSapp|label_stage:Production|label_group:Marketing
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_7
@@ -188,6 +195,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Atomic|label_stage:Test|label_group:Support
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_8
@@ -215,6 +223,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Wordpress|label_stage:Production|label_group:Marketing
+                  workload: statefulset
               volumes:
                 - volume:
                   volume_name: pvc-volume_9
@@ -237,6 +246,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Wordpress|label_stage:QA|label_group:Support
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_10
@@ -264,6 +274,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:MongoDB|label_stage:Production|label_group:Sales
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_11
@@ -286,6 +297,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Istio|label_stage:Development|label_group:Engineering
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_12
@@ -314,6 +326,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:MongoDB|label_stage:Production|label_group:Sales
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_13
@@ -336,6 +349,7 @@ generators:
                   mem_limit_gig: 4
                   pod_seconds: 3600
                   labels: label_application:Istio|label_stage:Development|label_group:Engineering
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_14
@@ -362,6 +376,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deploymentconfig
             openshift:
               pods:
                 - pod:
@@ -371,6 +386,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deploymentconfig
         - node:
           node_name: master_2
           cpu_cores: 4
@@ -385,6 +401,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
             openshift:
               pods:
                 - pod:
@@ -394,6 +411,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
         - node:
           node_name: master_3
           cpu_cores: 4
@@ -408,6 +426,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
             openshift:
               pods:
                 - pod:
@@ -417,6 +436,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
         - node:
           node_name: master_4
           cpu_cores: 4
@@ -431,6 +451,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
             openshift:
               pods:
                 - pod:
@@ -440,6 +461,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
             openshift-kube-apiserver:
               pods:
                 - pod:
@@ -449,3 +471,4 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
+                  workload: deployment
