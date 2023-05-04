@@ -95,6 +95,18 @@ generators:
       currency: USD
       location.region: us-west1-a
       labels: [{"environment": "ruby", "app":"snowdown", "version":"red", "kubernetes-io-cluster-c32se93c-73z3-3s3d-cs23-d3245sj45349": "owned"}]
+  - HCSGenerator: # Private Offer
+      start_date: 2022-01-01
+      end_date: 2022-01-31
+  - ComputeEngineGenerator: # CCSP memory cost
+      start_date: 2022-01-01
+      end_date: 2022-01-31
+      sku_id: 236F-83FC-852C
+  - ComputeEngineGenerator: # CCSP CPU cost
+      start_date: 2022-01-01
+      end_date: 2022-01-31
+      sku_id: 8C61-80B1-C43A
+
 
 projects:
   -
