@@ -34,19 +34,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:6648aff15d19927cd26db47eb56362ccd313a1ddbd7aaa3235ef05d05d398252",
-                "sha256:fe8248b80c4f0fdaed8b8779467c4431a5e52177e02ccd137d51ec51194ebb00"
+                "sha256:a0a049d16dabf559bd86d4622a985549154c6918f779f373fb7588bd3cf1272d",
+                "sha256:ea7dc518399106ee300b867596c92d2b7b498ee7721db935915cdd53339a9f92"
             ],
             "index": "pypi",
-            "version": "==1.26.125"
+            "version": "==1.26.126"
         },
         "botocore": {
             "hashes": [
-                "sha256:3005a7ffee083315e69938acdf1bfeaf9e21fe1fe1643d6573ee817721f4ffcd",
-                "sha256:ac87b63e9aa4231cd28941945024a0c4470c184c60334ebe5e1cae3544c785ed"
+                "sha256:a2c5cedb26b364386d02f9ed0a3492da6a322a82e539e54600fbc7190a49660d",
+                "sha256:e7549da5d69b37e8e1f63fcc18fbb9b23f05db8dcb4118019497eee4dad57ff7"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.29.125"
+            "version": "==1.29.126"
         },
         "cachetools": {
             "hashes": [
@@ -266,11 +266,11 @@
         },
         "faker": {
             "hashes": [
-                "sha256:3aabe5b8c4ab50103a0c05c15e31a24b22045968d1ac0b7fb48d1c6244400495",
-                "sha256:6f882f5a3303c0690b3fb2dd3418839935a2dca155d38f1b2931b0079f3ce622"
+                "sha256:6385386ba8d5aa255bec72f5392c2b795fcec8bebf975a9953488948d54bce35",
+                "sha256:ef61bbf266d30819e83bab4a6c74a0f5979ce4d19d4c9305719dd26cb7d8d51c"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==18.6.1"
+            "version": "==18.6.2"
         },
         "filelock": {
             "hashes": [
@@ -512,11 +512,11 @@
         },
         "koku-nise": {
             "hashes": [
-                "sha256:1420941b1f70488bc9d176bedacc5026db48b49136641b3a10709e49467db694",
-                "sha256:de8577c578544e9e059092101093693ab52b5ccc5d5d2030d462143c9a788d6b"
+                "sha256:54f826b0b69f1e0d0e0054e4d4565fbe903ff0a9f3202e26825b23f75aaa933f",
+                "sha256:c7ad2915d8f05bd1b0e3ca18e0941dd4e894cd850e01bc97c8753875a929d6d4"
             ],
             "index": "pypi",
-            "version": "==4.2.7"
+            "version": "==4.2.8"
         },
         "markupsafe": {
             "hashes": [
