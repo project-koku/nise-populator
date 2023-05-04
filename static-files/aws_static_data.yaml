@@ -284,6 +284,18 @@ generators:
         rate_code: SDFKLSDHCICLKKDS.LKHSSDUQHI.SDHLJKKJDQ
         rate_id: 2343582976
         subscription_id: 2346788732
+  - MarketplaceGenerator: # Private Offer
+      start_date: 2019-04-01
+      end_date: 2019-07-31
+      product_code: TRK010
+      product_name: Red Hat Enterprise Linux 7
+      legal_entity: Red Hat, Inc.
+  - MarketplaceGenerator: # CCSP
+      start_date: 2019-04-01
+      end_date: 2019-07-31
+      product_code: SVCSRHUI
+      product_name: Amazon Elastic Compute Cloud
+      legal_entity: Amazon Web Services, Inc.
 
 accounts:
   payer: 673985673683
