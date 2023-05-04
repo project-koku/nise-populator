@@ -2,7 +2,7 @@
 apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
-  name: nise-populator
+  name: ${NAME}
 objects:
 
 - apiVersion: v1
@@ -33,11 +33,11 @@ objects:
 - apiVersion: cloud.redhat.com/v1alpha1
   kind: ClowdApp
   metadata:
-    name: nise-populator
+    name: ${NAME}
   spec:
     envName: ${ENV_NAME}
     jobs:
-    - name: nise-populator
+    - name: ${NAME}
       schedule: ${POPULATE_SCHEDULE}
       restartPolicy: Never
       concurrencyPolicy: Forbid
