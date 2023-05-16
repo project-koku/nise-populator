@@ -1,6 +1,7 @@
 import logging
 import os
 from datetime import datetime
+from datetime import timedelta
 
 from nise.report import ocp_create_report
 
@@ -42,7 +43,7 @@ class OCP(Source):
 
     def generate(self):
         """Create data and upload it to the necessary location."""
-        self.start_date = datetime.today()
+        self.start_date = datetime.today() - timedelta(days=1)
         options = {
             "start_date": self.start_date,
             "end_date": self.end_date,

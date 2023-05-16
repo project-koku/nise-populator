@@ -3,7 +3,6 @@ import os
 from abc import ABC
 from abc import abstractmethod
 from datetime import datetime
-from datetime import timedelta
 
 import yaml
 
@@ -20,7 +19,7 @@ class Source(ABC):
     def __init__(self, **kwargs):
         """Initialize the source with configuration data."""
         self.start_date = datetime.today().replace(day=1)
-        self.end_date = datetime.today() + timedelta(days=1)
+        self.end_date = datetime.today()
 
     @staticmethod
     @abstractmethod
