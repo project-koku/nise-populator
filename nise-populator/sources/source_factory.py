@@ -1,6 +1,6 @@
 """A factory to create sources from a configuration."""
-import os
 import logging
+import os
 
 from sources.aws import AWS
 from sources.azure import Azure
@@ -37,7 +37,7 @@ class SourceFactory:
             "azure": Azure,
             "ocp": OCP,
             "gcp": GCP,
-            "oci": OCI
+            "oci": OCI,
         }
         for provider_substring in comma_separate_sources.split(","):
             key = provider_substring.lower().replace(" ", "")
