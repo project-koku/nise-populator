@@ -20,10 +20,12 @@ class OCI(Source):
 
     def __init__(self, **kwargs):
         """Initialize the source with configuration data."""
-        self.kwargs = kwargs
-        self.static_file = kwargs.get(self.STATIC_FILE)
-        self.bucket = os.environ.get("OCI_BUCKET_NAME")
         super().__init__(**kwargs)
+        self.kwargs = kwargs
+        self.oci_static_file = kwargs.get(self.STATIC_FILE)
+        self.bucket = os.environ.get("OCI_BUCKET_NAME")
+        self.start_date = datetime.datetime.today()
+        self.end_date = datetime.datetime.today() + datetime.timedelta(days=1)
 
     @staticmethod
     def get_source_type():
@@ -60,16 +62,17 @@ class OCI(Source):
         return True
 
     def generate(self):
-        self.start_date = datetime.datetime.today()
+        """Generate OCI cost and usage reports."""
+
         options = {
             "start_date": self.start_date,
             "end_date": self.end_date,
             "oci_bucket_name": self.bucket,
             "oci_daily_report": True,
         }
-        if self.static_file:
+        if self.oci_static_file:
             static_file_data = Source.obtain_static_file_data(
-                self.static_file, self.start_date, self.end_date
+                self.oci_static_file, self.start_date, self.end_date
             )
             options["static_report_data"] = static_file_data
         oci_create_report(options)
