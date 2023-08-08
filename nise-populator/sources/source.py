@@ -18,8 +18,8 @@ class Source(ABC):
     @abstractmethod
     def __init__(self, **kwargs):
         """Initialize the source with configuration data."""
-        self.start_date = datetime.today().replace(day=1)
-        self.end_date = datetime.today()
+        self.start_date = datetime.today().replace(day=1, microsecond=0)
+        self.end_date = datetime.today().replace(microsecond=0)
 
     @staticmethod
     @abstractmethod
