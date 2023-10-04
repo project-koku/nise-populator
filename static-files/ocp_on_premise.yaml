@@ -362,6 +362,61 @@ generators:
                     pod_name: pod_name20
                     labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
                     capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_15
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_1
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_16
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_2
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_17
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_3
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_18
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_4
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_19
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_5
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
         - node:
           node_name: master_1
           cpu_cores: 4
