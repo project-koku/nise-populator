@@ -350,6 +350,15 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:Istio|label_stage:Development|label_group:Engineering
                   workload: deploymentconfig
+                - pod:
+                  pod_name: pod_name21
+                  cpu_request: 1
+                  mem_request_gig: 2
+                  cpu_limit: 1
+                  mem_limit_gig: 4
+                  pod_seconds: 3600
+                  labels: label_application:Istio|label_stage:Development|label_group:Engineering
+                  workload: deploymentconfig
               volumes:
                 - volume:
                   volume_name: pvc-volume_14
@@ -360,6 +369,127 @@ generators:
                   - volume_claim:
                     volume_claim_name: pod_name20_data
                     pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_15
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_1
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_16
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_2
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_17
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_3
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_18
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_4
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_19
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name20_data_5
+                    pod_name: pod_name20
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_20
+                  storage_class: io1
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name21_data_0
+                    pod_name: pod_name21
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_21
+                  storage_class: io1
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name21_data_1
+                    pod_name: pod_name21
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_22
+                  storage_class: io1
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name21_data_3
+                    pod_name: pod_name21
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_23
+                  storage_class: io1
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name21_data_4
+                    pod_name: pod_name21
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_24
+                  storage_class: io1
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name21_data_5
+                    pod_name: pod_name21
+                    labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                    capacity_gig: 20
+                - volume:
+                  volume_name: pvc-volume_25
+                  storage_class: io1
+                  volume_request_gig: 20
+                  labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: pod_name21_data_6
+                    pod_name: pod_name21
                     labels: label_environment:Development|label_app:Istio|label_version:Development|label_storageclass:silver
                     capacity_gig: 20
         - node:
