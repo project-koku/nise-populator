@@ -575,7 +575,7 @@ generators:
             kube-system:
               pods:
                 - pod:
-                  pod_name: pod_name21
+                  pod_name: pod_name22
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1
@@ -585,7 +585,7 @@ generators:
             openshift:
               pods:
                 - pod:
-                  pod_name: pod_name22
+                  pod_name: pod_name23
                   cpu_request: 1
                   mem_request_gig: 2
                   cpu_limit: 1
