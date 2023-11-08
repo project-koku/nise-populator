@@ -21,6 +21,10 @@ class OCP(Source):
         self.insights_user = os.environ.get("INSIGHTS_USER")
         self.insights_password = os.environ.get("INSIGHTS_PASSWORD")
         self.insights_url = os.environ.get("INSIGHTS_URL")
+        self.hcc_service_account_id = os.environ.get("HCC_SERVICE_ACCOUNT_ID")
+        self.hcc_service_account_secret = os.environ.get(
+            "HCC_SERVICE_ACCOUNT_SECRET"
+        )
         self.cluster_id = kwargs.get(self.CLUSTER_ID)
         self.static_file = kwargs.get(self.STATIC_FILE)
         super().__init__(**kwargs)
@@ -32,7 +36,12 @@ class OCP(Source):
 
     def check_configuration(self):
         """Determine if source is properly configured for access."""
-        if self.insights_user and self.insights_password and self.insights_url:
+        if self.insights_url and (
+            (self.insights_user and self.insights_password)
+            or (
+                self.hcc_service_account_id and self.hcc_service_account_secret
+            )
+        ):
             return True
         return False
 

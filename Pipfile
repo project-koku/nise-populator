@@ -12,6 +12,7 @@ azure-storage-blob = "*"
 oci = "*"
 
 [dev-packages]
+cython = "<3.0"
 
 [requires]
 python_version = "3.8"
