@@ -70,7 +70,6 @@ ENV \
     PROMETHEUS_MULTIPROC_DIR=/tmp
 
 # copy the src files into the workdir
-COPY openshift openshift
 COPY static-files static-files
 COPY nise-populator nise-populator
 
