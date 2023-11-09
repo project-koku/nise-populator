@@ -100,6 +100,12 @@ objects:
                 key: hcc-service-account-secret
                 name: ${SECRET_NAME}
                 optional: true
+          - name: HCC_TOKEN_URL
+            valueFrom:
+              secretKeyRef:
+                key: hcc-token-url
+                name: ${SECRET_NAME}
+                optional: true
           - name: INSIGHTS_ACCOUNT_ID
             valueFrom:
               secretKeyRef:
