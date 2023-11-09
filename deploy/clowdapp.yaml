@@ -88,6 +88,18 @@ objects:
                 key: insights-password
                 name: ${SECRET_NAME}
                 optional: true
+          - name: HCC_SERVICE_ACCOUNT_ID
+            valueFrom:
+              secretKeyRef:
+                key: hcc-service-account-id
+                name: ${SECRET_NAME}
+                optional: true
+          - name: HCC_SERVICE_ACCOUNT_SECRET
+            valueFrom:
+              secretKeyRef:
+                key: hcc-service-account-secret
+                name: ${SECRET_NAME}
+                optional: true
           - name: INSIGHTS_ACCOUNT_ID
             valueFrom:
               secretKeyRef:
