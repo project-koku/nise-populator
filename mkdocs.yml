@@ -1,0 +1,4 @@
+docs_dir: docs/
+site_name: Nise Populator Documentation
+plugins:
+  - techdocs-core
