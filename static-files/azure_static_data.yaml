@@ -57,6 +57,28 @@ generators:
       instance_id: '/subscriptions/99999999-9999-9999-9999-999999999999/resourceGroups/koku-99hqd-rg/providers/Microsoft.Compute/virtualMachines/azure_master_2'
       tags:
         version: Antennae
+  - DTGenerator:
+      start_date: 2024-05-01
+      end_date: 2024-05-13
+      meter_id: 55555555-4444-3333-2222-111111111128
+      data_direction: "in"
+      resource_location: "US East"
+      instance_id: '/subscriptions/99999999-9999-9999-9999-999999999999/resourceGroups/koku-99hqd-rg/providers/Microsoft.Compute/virtualMachines/azure_compute_1'
+      resource_rate: 0.01
+      tags:
+        version: Mars
+        dashed-key-on-azure: dashed-value
+  - DTGenerator:
+      start_date: 2024-05-01
+      end_date: 2024-05-31
+      meter_id: 55555555-4444-3333-2222-111111111128
+      data_direction: "out"
+      resource_location: "US East"
+      instance_id: '/subscriptions/99999999-9999-9999-9999-999999999999/resourceGroups/koku-99hqd-rg/providers/Microsoft.Compute/virtualMachines/azure_compute_1'
+      resource_rate: 0.01
+      tags:
+        version: Mars
+        dashed-key-on-azure: dashed-value
   - StorageGenerator:
       start_date: 2019-11-01
       end_date: 2019-11-30
