@@ -526,11 +526,11 @@
         },
         "koku-nise": {
             "hashes": [
-                "sha256:2cd97ad205ba4fd3e2610e34e3570b9b2f6c0ac0238fab203bb44332ed3f9ce9",
-                "sha256:75268c8f789ffe47aeb1b2919ffd763ccee0ef5c6d30a468b835502d70a41b3a"
+                "sha256:ac80c683a382d4525ee34bc6bead019cee5c1ebd78e7304bd74e262c6636e53e",
+                "sha256:bd333076e762b08991ae866b82a399ee5790fd339c9388f514ec083f7478b316"
             ],
             "index": "pypi",
-            "version": "==4.5.2"
+            "version": "==4.5.5"
         },
         "markupsafe": {
             "hashes": [
