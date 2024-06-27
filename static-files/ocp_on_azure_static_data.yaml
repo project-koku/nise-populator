@@ -26,6 +26,7 @@ generators:
                   volume_name: pvc-volume_1
                   storage_class: gp2
                   volume_request_gig: 20
+                  csi_volume_handle: disk-id-1234567
                   labels: label_environment:Jupiter|label_app:mobile|label_version:Mars|label_storageclass:Baldur
                   volume_claims:
                   - volume_claim:
@@ -85,6 +86,12 @@ generators:
                     pod_name: pod_name3
                     labels: label_environment:qe|label_app:banking|label_version:MilkyWay|label_storageclass:Odin
                     capacity_gig: 20
+                - volume:
+                  volume_name: pv-claimless
+                  storage_class: gp2
+                  volume_request_gig: 20
+                  csi_volume_handle: pv-123-claimless
+
         - node:
           node_name: azure_compute_3
           cpu_cores: 2

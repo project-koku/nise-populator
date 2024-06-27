@@ -97,33 +97,39 @@ generators:
       rate: 0.05
       tags:
         storageclass: Thor
-  - StorageGenerator:
+  - ManagedDiskGenerator:
       start_date: 2019-11-01
       end_date: 2019-11-30
       meter_id: 55555555-4444-3333-2222-111111111123
       resource_location: "US North Central"
+      instance_id: '/subscriptions/99999999-9999-9999-9999-999999999999/resourceGroups/koku-99hqd-rg/providers/Microsoft.Compute/disks/azure-cloud-prefix-pvc-volume_2'
       amount: 10
       rate: 0.01
       tags:
         storageclass: Baldur
-  - StorageGenerator:
+      meter_name: "P80 LRS Disk"
+  - ManagedDiskGenerator:
       start_date: 2019-11-01
       end_date: 2019-11-30
       meter_id: 55555555-4444-3333-2222-111111111122
       resource_location: "US North Central"
+      instance_id: '/subscriptions/99999999-9999-9999-9999-999999999999/resourceGroups/koku-99hqd-rg/providers/Microsoft.Compute/disks/disk-id-1234567'
       amount: 10
       rate: 0.01
       tags:
         storageclass: Loki
-  - StorageGenerator:
+      meter_name: "P80 LRS Disk"
+  - ManagedDiskGenerator:
       start_date: 2019-11-01
       end_date: 2019-11-30
       meter_id: 55555555-4444-3333-2222-111111111121
       resource_location: "US North Central"
+      instance_id: '/subscriptions/99999999-9999-9999-9999-999999999999/resourceGroups/koku-99hqd-rg/providers/Microsoft.Compute/disks/pv-123-claimless'
       amount: 10
       rate: 0.01
       tags:
         storageclass: Odin
+      meter_name: "P80 LRS Disk"
   - StorageGenerator:
       start_date: 2019-11-01
       end_date: 2019-11-30
