@@ -1,4 +1,5 @@
 """Module for defining sources."""
+
 import os
 from abc import ABC
 from abc import abstractmethod
