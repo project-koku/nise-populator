@@ -135,7 +135,7 @@ generators:
       end_date: 2019-07-31
       product_sku: VEAJHRNBBBBA
       resource_id: 12345671
-      amount: 10
+      amount: 20
       rate: 0.01
       tags:
         resourceTags/user:storageclass: bravo
@@ -144,7 +144,7 @@ generators:
       end_date: 2019-07-31
       product_sku: VEAJHRNBBBBB
       resource_id: 12345672
-      amount: 10
+      amount: 20
       rate: 0.01
       tags:
         resourceTags/user:storageclass: delta
@@ -153,7 +153,7 @@ generators:
       end_date: 2019-07-31
       product_sku: VEAJHRNBBBBC
       resource_id: 12345673
-      amount: 10
+      amount: 20
       rate: 0.01
       tags:
         resourceTags/user:storageclass: epsilon
@@ -162,10 +162,17 @@ generators:
       end_date: 2019-07-31
       product_sku: VEAJHRNBBBBD
       resource_id: 12345674
-      amount: 10
+      amount: 20
       rate: 0.01
       tags:
         resourceTags/user:storageclass: gamma
+  - EBSGenerator:
+      start_date: 2019-04-01
+      end_date: 2019-07-31
+      product_sku: VEAJHRNBBBBF
+      resource_id: 123-claimless
+      amount: 30
+      rate: 0.01
   - RDSGenerator:
       start_date: 2019-04-01
       end_date: 2019-07-31
