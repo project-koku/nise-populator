@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
+FROM registry.access.redhat.com/ubi9-minimal:latest
 
 ARG PIPENV_DEV=False
 ARG USER_ID=1000
@@ -13,7 +13,7 @@ ENV PYTHON_VERSION=3.11 \
     PIPENV_VERBOSITY=-1 \
     APP_ROOT=/opt/nise-populator \
     APP_HOME=/opt/nise-populator/nise-populator \
-    PLATFORM="el8"
+    PLATFORM="el9"
 
 ENV SUMMARY="Nise-populator is a data generator tool for the Cost Management application" \
     DESCRIPTION="Nise-populator is a data generator tool for the Cost Management application"
