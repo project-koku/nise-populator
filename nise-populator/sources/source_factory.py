@@ -1,4 +1,3 @@
-"""A factory to create sources from a configuration."""
 import logging
 import os
 
@@ -20,9 +19,9 @@ class SourceFactory:
         self.valid_sources = self._create_valid_sources_list()
         self.valid_source_map = {}
         for valid_source in self.valid_sources:
-            self.valid_source_map[
-                valid_source.get_source_type()
-            ] = valid_source
+            self.valid_source_map[valid_source.get_source_type()] = (
+                valid_source
+            )
         self.sources = self._process_config()
         super().__init__()
 
