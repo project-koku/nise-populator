@@ -1,5 +1,3 @@
-"""A factory to create sources from a configuration."""
-
 import logging
 import os
 
