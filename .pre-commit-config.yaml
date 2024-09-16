@@ -3,6 +3,7 @@ default_language_version:
 
 ci:
   autoupdate_schedule: monthly
+  autofix_prs: false
 
 repos:
   - repo: https://github.com/asottile/reorder-python-imports
@@ -25,10 +26,19 @@ repos:
         require_serial: true
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.2.3
+    rev: v4.6.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: debug-statements
       - id: check-yaml
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.1.1
+    hooks:
       - id: flake8
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
