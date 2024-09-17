@@ -225,7 +225,7 @@ parameters:
   required: true
 - description: Image name
   name: IMAGE
-  value: quay.io/cloudservices/nise-populator
+  value: quay.io/redhat-services-prod/cost-mgmt-dev-tenant/nise-populator
 - description: Determines Clowder deployment
   name: CLOWDER_ENABLED
   value: "true"
