@@ -2,10 +2,11 @@
 **
 
 # ... except for dependencies and source
+!LICENSE
+!nise-populator/
 !Pipfile
 !Pipfile.lock
 !static-files/
-!nise-populator/
 
 # keep the test files out of the final image
 **/*test*
