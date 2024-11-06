@@ -71,6 +71,8 @@ ENV \
 COPY static-files static-files
 COPY nise-populator nise-populator
 
+COPY LICENSE /licenses/MIT.txt
+
 # create the koku user
 RUN \
     adduser koku -u ${USER_ID} -g 0 && \
