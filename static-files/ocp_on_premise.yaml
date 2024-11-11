@@ -348,7 +348,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
-                  labels: label_application:Istio|label_stage:Development|label_group:Engineering
+                  labels: label_application:Istio|label_stage:Development|label_group:Engineering|label_vm_kubevirt_io_name:Development
                   workload: deploymentconfig
                 - pod:
                   pod_name: pod_name21
@@ -357,7 +357,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
-                  labels: label_application:Istio|label_stage:Development|label_group:Engineering
+                  labels: label_application:Istio|label_stage:Development|label_group:Engineering|label_vm_kubevirt_io_name:Fedora
                   workload: deploymentconfig
               volumes:
                 - volume:
