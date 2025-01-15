@@ -16,7 +16,7 @@ metadata:
     pipelines.appstudio.openshift.io/type: build
 
   namespace: cost-mgmt-dev-tenant
-  name: nise-populator-push
+  name: nise-populator-on-push
 
 spec:
   params:
