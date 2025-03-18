@@ -18,7 +18,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
-                  labels: label_application:OpenCart|label_stage:Production|label_group:Marketing
+                  labels: label_application:OpenCart|label_stage:Production|label_group:Marketing|label_vm_kubevirt_io_name:Toronto-1-vm
                   workload: statefulset
               volumes:
                 - volume:
@@ -41,7 +41,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
-                  labels: label_application:Phoenix|label_stage:Development|label_group:Engineering
+                  labels: label_application:Phoenix|label_stage:Development|label_group:Engineering|label_vm_kubevirt_io_name:Raleigh-2-vm
                   workload: statefulset
               volumes:
                 - volume:
@@ -69,7 +69,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
-                  labels: label_application:Candlepin|label_stage:Development|label_group:Marketing
+                  labels: label_application:Candlepin|label_stage:Development|label_group:Marketing|label_vm_kubevirt_io_name:Madrid-3-vmm
                   workload: statefulset
               volumes:
                 - volume:
@@ -92,7 +92,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
-                  labels: label_application:Candlepin|label_stage:Production|label_group:Sales
+                  labels: label_application:Candlepin|label_stage:Production|label_group:Sales|label_vm_kubevirt_io_name:Boston-4-vm
                   workload: statefulset
               volumes:
                 - volume:
@@ -325,7 +325,7 @@ generators:
                   cpu_limit: 1
                   mem_limit_gig: 4
                   pod_seconds: 3600
-                  labels: label_application:MongoDB|label_stage:Production|label_group:Sales
+                  labels: label_application:MongoDB|label_stage:Production|label_group:Sales|label_vm_kubevirt_io_name:Cary-19-vm
                   workload: deploymentconfig
               volumes:
                 - volume:
