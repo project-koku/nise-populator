@@ -12,7 +12,7 @@ git clone https://github.com/project-koku/nise-populator.git
 This project is developed uses Pipenv. Many configuration settings can be read in from a ``.env`` file. To configure, do the following:
 
 1. Copy `example.env` into a `.env`
-2. Obtain AWS, Azure, GCP, OCI and Insights values and update the following in your `.env`:
+2. Obtain AWS, Azure, GCP and Insights values and update the following in your `.env`:
 ```
 AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY
 AWS_SECRET_ACCESS_KEY=AWS_SECRET_KEY
@@ -32,13 +32,6 @@ GCP_DATASET=GCP_DATASET
 GCP_PROJECT_ID=GCP_PROJECT_ID
 GOOGLE_APPLICATION_CREDENTIALS=/path/to/creds.json
 
-OCI_USER=OCI_USER
-OCI_FINGERPRINT=OCI_FINGERPRINT
-OCI_TENANCY=OCI_TENANCY
-OCI_REGION=OCI_REGION
-OCI_BUCKET_NAME=OCI_BUCKET_NAME
-OCI_CREDENTIALS=OCI_CREDENTIALS
-OCI_NAMESPACE=OCI_NAMESPACE
 ```
 3. Then project dependencies and a virtual environment can be created using :
 ```
