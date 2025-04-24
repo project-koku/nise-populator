@@ -4,7 +4,6 @@ import os
 from sources.aws import AWS
 from sources.azure import Azure
 from sources.gcp import GCP
-from sources.oci import OCI
 from sources.ocp import OCP
 
 LOG = logging.getLogger(__name__)
@@ -29,14 +28,13 @@ class SourceFactory:
         """Create a list of valid sources."""
         comma_separate_sources = os.environ.get("POPULATE_SOURCES")
         if not comma_separate_sources:
-            return [AWS, Azure, OCP, GCP, OCI]
+            return [AWS, Azure, OCP, GCP]
         valid_sources = []
         sources_mapping = {
             "aws": AWS,
             "azure": Azure,
             "ocp": OCP,
             "gcp": GCP,
-            "oci": OCI,
         }
         for provider_substring in comma_separate_sources.split(","):
             key = provider_substring.lower().replace(" ", "")
