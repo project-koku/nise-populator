@@ -19,6 +19,9 @@ metadata:
   name: nise-populator-on-push
 
 spec:
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-nise-populator
+
   params:
     - name: git-url
       value: '{{source_url}}'

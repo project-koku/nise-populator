@@ -20,6 +20,9 @@ metadata:
   name: nise-populator-pr
 
 spec:
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-nise-populator
+
   params:
     - name: git-url
       value: '{{source_url}}'
