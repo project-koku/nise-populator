@@ -12,7 +12,7 @@ sources:
         static-file: ocp_on_aws_static_data.yaml
     - azure_linked_ocp:
         type: Azure
-        storage_account: nisepopulator
+        storage_account: newnisepopulator
         storage_container: cur
         report_prefix: cur
         report_name: azurecost
