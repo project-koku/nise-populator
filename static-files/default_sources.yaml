@@ -2,7 +2,7 @@
 sources:
     - aws_linked_ocp:
         type: AWS
-        bucket: nise-populator
+        bucket: nisepopulator
         report_prefix: cur
         report_name: awscost
         static-file: aws_static_data.yaml
