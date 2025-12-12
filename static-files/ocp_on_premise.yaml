@@ -6,6 +6,7 @@ generators:
       nodes:
         - node:
           node_name: compute_1
+          node_labels: label_nodeclass:compute|label_nvidia_com_gpu_count:1|label_nvidia_com_gpu_product:Tesla_T4|label_nvidia_com_gpu_present:True|label_nvidia_com_gpu_replicas:1
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -20,6 +21,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:OpenCart|label_stage:Production|label_group:Marketing|label_vm_kubevirt_io_name:Toronto-1-vm
                   workload: statefulset
+                  gpus:
+                    - gpu:
+                      gpu_model: "Tesla T4"
+                      gpu_memory_capacity_mib: 15360
               volumes:
                 - volume:
                   volume_name: pvc-volume_1
@@ -57,6 +62,7 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: compute_2
+          node_labels: label_nodeclass:compute|label_nvidia_com_gpu_count:2|label_nvidia_com_gpu_product:A100|label_nvidia_com_gpu_present:True|label_nvidia_com_gpu_replicas:1
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -71,6 +77,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:Candlepin|label_stage:Development|label_group:Marketing|label_vm_kubevirt_io_name:Madrid-3-vmm
                   workload: statefulset
+                  gpus:
+                    - gpu:
+                      gpu_model: "A100"
+                      gpu_memory_capacity_mib: 40960
               volumes:
                 - volume:
                   volume_name: pvc-volume_3
@@ -94,6 +104,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:Candlepin|label_stage:Production|label_group:Sales|label_vm_kubevirt_io_name:Boston-4-vm
                   workload: statefulset
+                  gpus:
+                    - gpu:
+                      gpu_model: "A100"
+                      gpu_memory_capacity_mib: 40960
               volumes:
                 - volume:
                   volume_name: pvc-volume_4
@@ -108,6 +122,7 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: compute_3
+          node_labels: label_nodeclass:compute|label_nvidia_com_gpu_count:1|label_nvidia_com_gpu_product:V100|label_nvidia_com_gpu_present:True|label_nvidia_com_gpu_replicas:1
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -122,6 +137,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:Cygwin|label_stage:Production|label_group:Marketing
                   workload: statefulset
+                  gpus:
+                    - gpu:
+                      gpu_model: "V100"
+                      gpu_memory_capacity_mib: 16384
               volumes:
                 - volume:
                   volume_name: pvc-volume_5
@@ -159,6 +178,7 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: compute_4
+          node_labels: label_nodeclass:compute|label_nvidia_com_gpu_count:1|label_nvidia_com_gpu_product:H100|label_nvidia_com_gpu_present:True|label_nvidia_com_gpu_replicas:1
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -173,6 +193,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:CMSapp|label_stage:Production|label_group:Marketing
                   workload: statefulset
+                  gpus:
+                    - gpu:
+                      gpu_model: "H100"
+                      gpu_memory_capacity_mib: 81920
               volumes:
                 - volume:
                   volume_name: pvc-volume_7
@@ -210,6 +234,7 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: compute_5
+          node_labels: label_nodeclass:compute|label_nvidia_com_gpu_count:1|label_nvidia_com_gpu_product:A30|label_nvidia_com_gpu_present:True|label_nvidia_com_gpu_replicas:1
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -224,6 +249,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:Wordpress|label_stage:Production|label_group:Marketing
                   workload: statefulset
+                  gpus:
+                    - gpu:
+                      gpu_model: "A30"
+                      gpu_memory_capacity_mib: 24576
               volumes:
                 - volume:
                   volume_name: pvc-volume_9
@@ -261,6 +290,7 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: compute_6
+          node_labels: label_nodeclass:compute|label_nvidia_com_gpu_count:1|label_nvidia_com_gpu_product:L40S|label_nvidia_com_gpu_present:True|label_nvidia_com_gpu_replicas:1
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -275,6 +305,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:MongoDB|label_stage:Production|label_group:Sales
                   workload: deploymentconfig
+                  gpus:
+                    - gpu:
+                      gpu_model: "L40S"
+                      gpu_memory_capacity_mib: 49152
               volumes:
                 - volume:
                   volume_name: pvc-volume_11
@@ -298,6 +332,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:Istio|label_stage:Development|label_group:Engineering
                   workload: deploymentconfig
+                  gpus:
+                    - gpu:
+                      gpu_model: "L40S"
+                      gpu_memory_capacity_mib: 49152
               volumes:
                 - volume:
                   volume_name: pvc-volume_12
@@ -312,7 +350,7 @@ generators:
                     capacity_gig: 20
         - node:
           node_name: compute_7
-          node_labels: label_nodeclass:compute|label_node_role_kubernetes_io:infra
+          node_labels: label_nodeclass:compute|label_node_role_kubernetes_io:infra|label_nvidia_com_gpu_count:3|label_nvidia_com_gpu_product:A100|label_nvidia_com_gpu_present:True|label_nvidia_com_gpu_replicas:1
           cpu_cores: 4
           memory_gig: 16
           namespaces:
@@ -327,6 +365,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:MongoDB|label_stage:Production|label_group:Sales|label_vm_kubevirt_io_name:Cary-19-vm
                   workload: deploymentconfig
+                  gpus:
+                    - gpu:
+                      gpu_model: "A100"
+                      gpu_memory_capacity_mib: 40960
               volumes:
                 - volume:
                   volume_name: pvc-volume_13
@@ -350,6 +392,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:Istio|label_stage:Development|label_group:Engineering|label_vm_kubevirt_io_name:Development
                   workload: deploymentconfig
+                  gpus:
+                    - gpu:
+                      gpu_model: "A100"
+                      gpu_memory_capacity_mib: 40960
                 - pod:
                   pod_name: pod_name21
                   cpu_request: 1
@@ -359,6 +405,10 @@ generators:
                   pod_seconds: 3600
                   labels: label_application:Istio|label_stage:Development|label_group:Engineering|label_vm_kubevirt_io_name:Fedora
                   workload: deploymentconfig
+                  gpus:
+                    - gpu:
+                      gpu_model: "A100"
+                      gpu_memory_capacity_mib: 40960
               volumes:
                 - volume:
                   volume_name: pvc-volume_14
