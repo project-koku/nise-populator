@@ -334,8 +334,8 @@ generators:
                   workload: deploymentconfig
                   gpus:
                     - gpu:
-                      gpu_model: "A10"
-                      gpu_memory_capacity_mib: 24576
+                      gpu_model: "L40S"
+                      gpu_memory_capacity_mib: 49152
               volumes:
                 - volume:
                   volume_name: pvc-volume_12
