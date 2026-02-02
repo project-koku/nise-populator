@@ -6,7 +6,6 @@ from nise.report import ocp_create_report
 
 from sources.source import Source
 
-
 LOG = logging.getLogger(__name__)
 
 
