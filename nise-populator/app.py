@@ -8,7 +8,6 @@ from sources.source_factory import SourceFactory
 from utils import get_static_file_path
 from utils import load_yaml_file
 
-
 root = logging.getLogger()
 root.setLevel(logging.INFO)
 
