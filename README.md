@@ -69,3 +69,4 @@ _Note:_ Delete OpenShift resources with the following command:
 ```
 oc process --param-file openshift/parameters.properties  -f openshift/ |  oc delete -f -
 ```
+# COST-7485 test
