@@ -9,6 +9,9 @@ pre-commit = "*"
 koku-nise = "*"
 pyyaml = "*"
 azure-storage-blob = "*"
+certifi = "*"
+requests = "*"
+cryptography = "*"
 
 [dev-packages]
 cython = "<3.0"
