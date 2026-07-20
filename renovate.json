@@ -8,6 +8,52 @@
         "on Tuesday after 3am and before 10am"
     ],
     "lockFileMaintenance": {
-        "enabled": true
-    }
+        "enabled": true,
+        "schedule": [
+            "on Tuesday after 3am and before 10am"
+        ]
+    },
+    "packageRules": [
+        {
+            "matchManagers": [
+                "pipenv"
+            ],
+            "groupName": "python-dependencies",
+            "matchUpdateTypes": [
+                "minor",
+                "patch",
+                "pin",
+                "digest"
+            ],
+            "addLabels": [
+                "dependencies"
+            ]
+        },
+        {
+            "matchManagers": [
+                "pipenv"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "addLabels": [
+                "dependencies"
+            ]
+        },
+        {
+            "matchManagers": [
+                "dockerfile"
+            ],
+            "addLabels": [
+                "dependencies"
+            ]
+        },
+        {
+            "matchDatasources": ["docker"],
+            "matchPackageNames": [
+                "registry.redhat.io/ubi9-minimal"
+            ],
+            "versioning": "redhat"
+        }
+    ]
 }
