@@ -42,10 +42,19 @@
         },
         {
             "matchManagers": [
+                "pre-commit"
+            ],
+            "groupName": "pre-commit hooks",
+            "addLabels": [
+                "dependencies"
+            ]
+        },
+        {
+            "matchManagers": [
                 "dockerfile"
             ],
             "addLabels": [
-                "dependencies"
+                "base-image"
             ]
         },
         {
