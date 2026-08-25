@@ -14,7 +14,7 @@ requests = "*"
 cryptography = "*"
 
 [dev-packages]
-cython = "<3.3"
+cython = "<3.4"
 
 [requires]
 python_version = "3.11"
