@@ -973,11 +973,11 @@
         },
         "virtualenv": {
             "hashes": [
-                "sha256:4d2256a16b2c99cb30e58abe96d009a4328e215d64f229c7738fc5adad83cd1a",
-                "sha256:7dab4bee7733e85ae3742d349abe119050b00a31718105486ce11ff757156c35"
+                "sha256:6fd04089fc0dc33549e7abdff70fc3b63d4e15799f2dbf3281f80d13b9fce522",
+                "sha256:719b189804e66678017d9f63bbfc590c44f6b96ab4829513806394f9b375929c"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==21.9.1"
+            "version": "==21.14.1"
         }
     },
     "develop": {
