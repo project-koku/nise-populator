@@ -33,6 +33,6 @@ repos:
       - id: check-yaml
 
   - repo: https://github.com/pycqa/flake8
-    rev: {"message":"Not Found","documentation_url":"https://docs.github.com/rest/releases/releases#get-the-latest-release","status":"404"}
+    rev: 7.4.1
     hooks:
       - id: flake8
