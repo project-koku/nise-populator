@@ -9,7 +9,8 @@ pre-commit = "*"
 koku-nise = "*"
 pyyaml = "*"
 azure-storage-blob = "*"
-certifi = "*"
+certifi = ">=2026.10.19"  # floor: COST-8551 eMudhra distrust (fixed in 2026.10.19+)
+virtualenv = ">=21.14.13"  # floor: COST-8472/8475/8477/8480/8505 (fixed in 21.14.13+)
 requests = "*"
 cryptography = "*"
 
